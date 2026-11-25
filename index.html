@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>結婚相談所 マリッジスタジオ｜あなたの結婚を、いっしょにつくる（IBJ加盟・全国オンライン）</title>
+<meta name="description" content="結婚相談所マリッジスタジオは、あなたの結婚をいっしょにつくるIBJ加盟の結婚相談所です。マリッジクリエイターが、プロフィール作りからお見合い・交際・成婚まで、全国オンラインで伴走します。">
+<meta property="og:title" content="結婚相談所 マリッジスタジオ">
+<meta property="og:description" content="あなたの結婚を、いっしょにつくる。IBJ加盟・全国オンライン対応の結婚相談所です。">
+<meta property="og:image" content="img/hero.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Shippori+Mincho:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FBF7F1; --bg2:#F4ECE1; --card:#FFFFFF; --ink:#2F2620; --sub:#6E6258; --line:#E6DACB;
+  --accent:#C8674F; --accent-d:#A9523D; --gold:#B8955A; --green:#06C755; --tbd:#FFF1A8;
+  --serif:"Shippori Mincho","Yu Mincho",serif; --en:"Cormorant Garamond",serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Zen Kaku Gothic New","Hiragino Sans","Yu Gothic",sans-serif;line-height:1.95;font-weight:400;letter-spacing:.04em;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.tbd{background:var(--tbd);border-radius:4px;padding:0 4px}
+
+/* ふわっと表示 */
+.rv{opacity:0;transform:translateY(28px);transition:opacity 1s ease,transform 1s ease}
+.rv.on{opacity:1;transform:none}
+.rv.d1{transition-delay:.15s}.rv.d2{transition-delay:.3s}.rv.d3{transition-delay:.45s}
+
+/* ヘッダー */
+header{position:fixed;top:0;left:0;right:0;z-index:30;transition:background .4s,box-shadow .4s}
+header.solid{background:rgba(251,247,241,.94);backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:76px;gap:16px;max-width:1280px}
+.logo{display:flex;flex-direction:column;text-decoration:none;line-height:1.1;color:#fff;transition:color .4s}
+header.solid .logo{color:var(--ink)}
+.logo small{font-size:11px;letter-spacing:.25em;opacity:.85}
+.logo b{font-family:var(--serif);font-size:22px;font-weight:700;letter-spacing:.12em}
+nav a{font-size:13px;text-decoration:none;margin-left:26px;color:#fff;letter-spacing:.12em;transition:color .3s}
+header.solid nav a{color:var(--sub)}
+nav a:hover{color:var(--gold)!important}
+@media(max-width:900px){header nav{display:none}}
+
+/* ボタン */
+.btn-line{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--green);color:#fff;font-weight:700;text-decoration:none;border-radius:999px;padding:16px 34px;font-size:16px;letter-spacing:.08em;box-shadow:0 10px 24px rgba(6,199,85,.28);transition:transform .2s,box-shadow .2s}
+.btn-line:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(6,199,85,.35)}
+.btn-line.small{padding:9px 18px;font-size:13px;box-shadow:none}
+.btn-line svg{width:20px;height:20px}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;color:#fff;text-decoration:none;font-size:14px;letter-spacing:.1em;border-bottom:1px solid rgba(255,255,255,.6);padding-bottom:3px;margin-left:24px}
+.btn-ghost:hover{border-color:#fff}
+
+/* ヒーロー */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;overflow:hidden;color:#fff}
+.hero .bg{position:absolute;inset:0;background:url(img/hero.jpg) 65% center/cover;transform:scale(1.08);animation:zoom 14s ease-out forwards}
+@keyframes zoom{to{transform:scale(1)}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(35,26,20,.72) 0%,rgba(35,26,20,.42) 45%,rgba(35,26,20,.05) 80%)}
+.hero .wrap{position:relative;z-index:2;width:100%;max-width:1280px}
+.hero .en{font-family:var(--en);font-style:italic;font-size:clamp(18px,2vw,24px);letter-spacing:.12em;color:#F2DDBF}
+.hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(32px,4.4vw,58px);line-height:1.45;letter-spacing:.1em;margin:14px 0 22px}
+.hero p{max-width:520px;font-size:15px;line-height:2.1;opacity:.92;margin:0 0 36px}
+.hero .badges{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px}
+.hero .badges span{border:1px solid rgba(255,255,255,.55);border-radius:999px;padding:4px 14px;font-size:12px;letter-spacing:.14em}
+.scroll{position:absolute;left:50%;bottom:26px;z-index:2;transform:translateX(-50%);font-family:var(--en);font-size:12px;letter-spacing:.3em;color:#fff;opacity:.8;text-align:center}
+.scroll::after{content:"";display:block;width:1px;height:46px;margin:8px auto 0;background:linear-gradient(#fff,transparent);animation:line 2s infinite}
+@keyframes line{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+@media(max-width:760px){.hero::after{background:linear-gradient(180deg,rgba(35,26,20,.25),rgba(35,26,20,.75))}.hero{align-items:flex-end;padding-bottom:110px}.scroll{display:none}.btn-ghost{margin:18px 0 0}}
+
+/* セクション共通 */
+section{padding:120px 0;position:relative}
+.sec-head{text-align:center;margin-bottom:64px}
+.sec-head .en{display:block;font-family:var(--en);font-style:italic;color:var(--gold);font-size:20px;letter-spacing:.16em}
+.sec-head h2{font-family:var(--serif);font-weight:600;font-size:clamp(24px,3.4vw,36px);letter-spacing:.12em;margin:6px 0 0;line-height:1.6}
+.sec-head h2::after{content:"";display:block;width:36px;height:1px;background:var(--gold);margin:22px auto 0}
+.sec-head p{color:var(--sub);margin:22px auto 0;max-width:620px}
+.bg2{background:var(--bg2)}
+
+/* 名前の由来 */
+.origin{display:grid;grid-template-columns:1.1fr 1fr;gap:72px;align-items:center}
+.photo{position:relative;z-index:0}
+.photo img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:4px}
+.photo::before{content:"";position:absolute;inset:22px -22px -22px 22px;border:1px solid var(--gold);border-radius:4px;z-index:-1}
+.origin .word{font-family:var(--en);font-size:clamp(40px,5vw,62px);line-height:1;color:var(--accent);letter-spacing:.02em}
+.origin .formula{font-size:14px;color:var(--sub);margin:14px 0 26px;letter-spacing:.1em}
+.origin h3{font-family:var(--serif);font-size:24px;font-weight:600;margin:0 0 18px;letter-spacing:.1em;line-height:1.7}
+.origin p{color:var(--sub);margin:0 0 14px}
+@media(max-width:900px){.origin{grid-template-columns:1fr;gap:56px}}
+
+/* 特徴 */
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:36px}
+.feature img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:4px;transition:transform .8s}
+.feature .ph{overflow:hidden;border-radius:4px}
+.feature:hover img{transform:scale(1.04)}
+.feature .no{font-family:var(--en);font-size:44px;color:var(--gold);line-height:1;margin:22px 0 4px;font-style:italic}
+.feature h3{font-family:var(--serif);font-size:21px;font-weight:600;margin:0 0 10px;letter-spacing:.08em}
+.feature p{margin:0;color:var(--sub);font-size:14.5px}
+@media(max-width:900px){.features{grid-template-columns:1fr;gap:56px}}
+
+/* カウンセラー */
+.counselor{display:grid;grid-template-columns:300px 1fr;gap:64px;align-items:center;background:var(--card);padding:56px;border-radius:6px;box-shadow:0 30px 60px -30px rgba(80,50,30,.18)}
+.counselor .owl{width:300px;height:300px;border-radius:50%;background:radial-gradient(circle at 50% 40%,#FBEBDD,#F1DCC6);display:flex;align-items:center;justify-content:center}
+.counselor .owl img{width:78%}
+.counselor .owl-cap{text-align:center;font-size:12px;color:var(--sub);margin-top:12px}
+.title-badge{display:inline-block;font-family:var(--en);font-style:italic;font-size:15px;letter-spacing:.14em;color:var(--gold);border-top:1px solid var(--gold);border-bottom:1px solid var(--gold);padding:2px 12px}
+.counselor h3{font-family:var(--serif);font-size:34px;font-weight:600;letter-spacing:.16em;margin:12px 0 2px}
+.counselor .role{color:var(--sub);font-size:13px;margin:0 0 22px;letter-spacing:.12em}
+.counselor p{margin:0 0 14px}
+.links{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.links a{border:1px solid var(--line);border-radius:999px;padding:7px 16px;font-size:13px;text-decoration:none;transition:.3s}
+.links a:hover{border-color:var(--accent);color:var(--accent)}
+@media(max-width:900px){.counselor{grid-template-columns:1fr;padding:36px 24px;text-align:center}.counselor .owl{width:220px;height:220px;margin:0 auto}.links{justify-content:center}}
+
+/* 料金 */
+.price{max-width:760px;margin:0 auto;background:var(--card);border-radius:6px;padding:16px 44px;box-shadow:0 30px 60px -30px rgba(80,50,30,.15)}
+.price dl{display:grid;grid-template-columns:1fr auto;margin:0}
+.price dt,.price dd{padding:22px 0;border-bottom:1px solid var(--line);margin:0}
+.price dt{font-family:var(--serif);font-weight:600;letter-spacing:.1em}
+.price dd{text-align:right}
+.price dl>*:nth-last-child(-n+2){border-bottom:none}
+.note{font-size:12.5px;color:var(--sub);text-align:center;margin-top:18px}
+
+/* 流れ */
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:0;list-style:none;padding:0;margin:0;position:relative}
+.flow::before{content:"";position:absolute;top:34px;left:10%;right:10%;height:1px;background:var(--gold);opacity:.6}
+.flow li{text-align:center;padding:0 10px;position:relative}
+.flow .dot{width:68px;height:68px;border-radius:50%;background:var(--bg);border:1px solid var(--gold);margin:0 auto 18px;display:flex;align-items:center;justify-content:center;font-family:var(--en);font-size:24px;color:var(--gold);font-style:italic;position:relative;z-index:1}
+.flow b{display:block;font-family:var(--serif);font-size:17px;letter-spacing:.08em;margin-bottom:4px}
+.flow span{font-size:13px;color:var(--sub);line-height:1.8;display:block}
+@media(max-width:900px){.flow{grid-template-columns:1fr;gap:30px}.flow::before{display:none}}
+
+/* FAQ */
+.faq{max-width:800px;margin:0 auto}
+details{border-bottom:1px solid var(--line);padding:22px 4px}
+details:first-child{border-top:1px solid var(--line)}
+summary{font-family:var(--serif);font-weight:600;font-size:16.5px;cursor:pointer;list-style:none;position:relative;padding:0 36px 0 38px;letter-spacing:.06em}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"Q";position:absolute;left:0;top:-4px;font-family:var(--en);font-size:24px;color:var(--gold);font-style:italic}
+summary::after{content:"";position:absolute;right:6px;top:50%;width:12px;height:12px;border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);transform:translateY(-70%) rotate(45deg);transition:transform .3s}
+details[open] summary::after{transform:translateY(-30%) rotate(-135deg)}
+details p{margin:14px 0 0 38px;color:var(--sub);font-size:14.5px}
+
+/* CTA */
+.cta{position:relative;padding:150px 0;color:#fff;text-align:center;overflow:hidden}
+.cta .bg{position:absolute;inset:0;background:url(img/cta.jpg) center/cover}
+.cta::after{content:"";position:absolute;inset:0;background:rgba(40,28,20,.58)}
+.cta .wrap{position:relative;z-index:1}
+.cta .en{font-family:var(--en);font-style:italic;color:#F2DDBF;font-size:22px;letter-spacing:.16em}
+.cta h2{font-family:var(--serif);font-weight:600;font-size:clamp(26px,3.8vw,40px);letter-spacing:.12em;margin:10px 0 18px;line-height:1.6}
+.cta p{opacity:.9;margin:0 0 38px}
+.cta .sub{display:block;margin-top:22px;font-size:14px}
+.cta .sub a{color:#fff}
+@media(max-width:900px){.cta .bg{background-attachment:scroll}}
+
+/* 法定表記 */
+.legal{font-size:13.5px;padding:90px 0}
+.legal table{width:100%;max-width:860px;margin:0 auto;border-collapse:collapse;background:var(--card)}
+.legal th,.legal td{border-bottom:1px solid var(--line);padding:14px 16px;text-align:left;vertical-align:top}
+.legal th{width:30%;font-weight:500;color:var(--sub);white-space:nowrap}
+@media(max-width:600px){.legal th{white-space:normal}}
+footer{background:#2A211B;color:#D9CCBB;text-align:center;padding:56px 16px 40px;font-size:12.5px;letter-spacing:.1em}
+footer .flogo b{display:block;font-family:var(--serif);font-size:22px;color:#fff;letter-spacing:.14em}
+footer .flogo small{font-family:var(--en);font-style:italic;font-size:15px;color:var(--gold)}
+footer nav{margin:24px 0}
+footer nav a{color:#D9CCBB;margin:0 12px;text-decoration:none}
+
+/* スマホ下部固定ボタン */
+.sticky-cta{display:none}
+@media(max-width:760px){
+  .sticky-cta{display:block;position:fixed;left:0;right:0;bottom:0;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(251,247,241,.95);border-top:1px solid var(--line);z-index:40;transform:translateY(110%);transition:transform .4s}
+  .sticky-cta.show{transform:none}
+  .sticky-cta .btn-line{width:100%;padding:13px}
+  section{padding:84px 0}
+}
+</style>
+</head>
+<body>
+
+<header id="hd">
+  <div class="wrap">
+    <a class="logo" href="#top"><small>結婚相談所</small><b>マリッジスタジオ</b></a>
+    <nav>
+      <a href="#origin">名前の由来</a><a href="#about">特徴</a><a href="#counselor">カウンセラー</a><a href="#price">料金</a><a href="#flow">ご入会の流れ</a><a href="#faq">よくある質問</a>
+    </nav>
+    <a class="btn-line small" href="https://lin.ee/t0CD8nW" target="_blank" rel="noopener">LINEで相談</a>
+  </div>
+</header>
+
+<main id="top">
+  <!-- ヒーロー -->
+  <div class="hero">
+    <div class="bg"></div>
+    <div class="wrap">
+      <div class="en rv">Marriage Studio</div>
+      <h1 class="rv d1">あなたの結婚を、<br>いっしょにつくる。</h1>
+      <div class="badges rv d2"><span>IBJ加盟</span><span>全国オンライン対応</span><span>無料面談あり</span></div>
+      <p class="rv d2">ひとりで抱えがちな婚活を、いっしょに形にしていく場所。<br>マリッジクリエイターが、プロフィール作りからお見合い・交際・成婚まで伴走します。</p>
+      <div class="rv d3">
+        <a class="btn-line" href="https://lin.ee/t0CD8nW" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8-6C21.5 14.2 22 12.7 22 11c0-4.4-4.5-8-10-8z"/></svg>LINEで無料相談する</a>
+        <a class="btn-ghost" href="https://hudetaro.github.io/omiai-dojo/?from=hp" target="_blank" rel="noopener">3分でお見合い力チェック →</a>
+      </div>
+    </div>
+    <div class="scroll">SCROLL</div>
+  </div>
+
+  <!-- 名前の由来 -->
+  <section id="origin">
+    <div class="wrap">
+      <div class="sec-head rv"><span class="en">Concept</span><h2>結婚を、つくる場所。</h2></div>
+      <div class="origin">
+        <div class="photo rv"><img src="img/studio.jpg" alt="あたたかな光が差し込むスタジオの机"></div>
+        <div class="rv d1">
+          <div class="word">Marriage<br>Studio</div>
+          <div class="formula">マリッジ（結婚）＋ スタジオ（つくる場所）</div>
+          <h3>ここは、あなたの結婚を<br>いっしょにつくるスタジオです。</h3>
+          <p>ゲームスタジオでクリエイターが作品をつくるように、マリッジスタジオでは<b>マリッジクリエイター</b>が、あなたといっしょに結婚までの道のりをつくります。</p>
+          <p>結婚は、お相手を「探す」だけでは決まりません。プロフィールの見せ方、お見合いでの会話、交際中のやりとり。ひとつずつ形にしていくことで、結婚は近づいていきます。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 特徴 -->
+  <section id="about" class="bg2">
+    <div class="wrap">
+      <div class="sec-head rv"><span class="en">Features</span><h2>マリッジスタジオの特徴</h2><p>「何がダメなのか分からない」を、具体的な言葉と行動に変えていきます。</p></div>
+      <div class="features">
+        <div class="feature rv"><div class="ph"><img src="img/together.jpg" alt="ノートを見ながら一緒に相談する様子"></div><div class="no">01</div><h3>いっしょにつくる婚活</h3><p>任せきりにも、放りっぱなしにもしません。プロフィール、お見合い、交際の一つひとつを、相談しながら形にしていきます。</p></div>
+        <div class="feature rv d1"><div class="ph"><img src="img/online.jpg" alt="自宅からオンラインで相談する男性"></div><div class="no">02</div><h3>全国どこでもオンライン</h3><p>面談もサポートもオンラインで完結。お住まいの地域を問わず、ご自宅から婚活を始められます。</p></div>
+        <div class="feature rv d2"><div class="ph"><img src="img/meet.jpg" alt="ホテルのラウンジでのお見合い"></div><div class="no">03</div><h3>IBJのネットワークで出会える</h3><p>IBJ（日本結婚相談所連盟）に加盟。全国の加盟相談所の会員の方とお見合いができます。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- カウンセラー -->
+  <section id="counselor">
+    <div class="wrap">
+      <div class="sec-head rv"><span class="en">Counselor</span><h2>カウンセラー紹介</h2></div>
+      <div class="counselor rv">
+        <div>
+          <div class="owl"><img src="img/fuku_talk.png" alt="案内役のフク先生"></div>
+          <div class="owl-cap">YouTube・LINEの案内役「フク先生」</div>
+        </div>
+        <div>
+          <span class="title-badge">Marriage Creator</span>
+          <h3>マリッジクリエイター</h3>
+          <p class="role">結婚相談所マリッジスタジオ 代表</p>
+          <p>ふだんはゲーム制作やYouTubeなど、ものづくりの仕事をしています。「つくる」ことが好きな自分だからこそ、婚活も、あなたといっしょにつくっていきたいと考えています。</p>
+          <p><span class="tbd">【ここにご本人の婚活経験・この仕事を始めた理由などを入れます】</span></p>
+          <p>うまくいかない婚活には、必ず理由があります。責めるのではなく、「どうすれば伝わるか」をいっしょに考える。それがマリッジスタジオのスタイルです。</p>
+          <div class="links">
+            <a href="https://www.youtube.com/channel/UClz9nCXALjZfVts4ga1Dc_Q" target="_blank" rel="noopener">▶ YouTube「フク先生の婚活相談室」</a>
+            <a href="https://note.com/kekkon_fuku" target="_blank" rel="noopener">note 婚活コラム</a>
+            <a href="https://hudetaro.github.io/fuku-shindan/" target="_blank" rel="noopener">30秒 結婚タイプ診断</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 料金 -->
+  <section id="price" class="bg2">
+    <div class="wrap">
+      <div class="sec-head rv"><span class="en">Price</span><h2>料金プラン</h2><p>くわしい内容は、無料面談でご説明します。</p></div>
+      <div class="price rv">
+        <dl>
+          <dt>入会金</dt><dd><span class="tbd">【金額】</span></dd>
+          <dt>登録料</dt><dd><span class="tbd">【金額】</span></dd>
+          <dt>月会費</dt><dd><span class="tbd">【金額】</span></dd>
+          <dt>お見合い料</dt><dd><span class="tbd">【金額】</span></dd>
+          <dt>成婚料</dt><dd><span class="tbd">【金額】</span></dd>
+        </dl>
+      </div>
+      <p class="note">※表示価格はすべて税込です。</p>
+    </div>
+  </section>
+
+  <!-- 流れ -->
+  <section id="flow">
+    <div class="wrap">
+      <div class="sec-head rv"><span class="en">Flow</span><h2>ご入会までの流れ</h2><p>まずはLINEから、気軽にご相談ください。</p></div>
+      <ol class="flow rv">
+        <li><div class="dot">1</div><b>LINE登録</b><span>友だち追加して<br>無料面談を予約</span></li>
+        <li><div class="dot">2</div><b>無料面談</b><span>オンラインで<br>お話を伺います（約60分）</span></li>
+        <li><div class="dot">3</div><b>ご入会</b><span>必要書類を<br>ご提出いただきます</span></li>
+        <li><div class="dot">4</div><b>活動スタート</b><span>プロフィール作成<br>お見合い</span></li>
+        <li><div class="dot">5</div><b>ご成婚</b><span>交際から成婚まで<br>伴走します</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="bg2">
+    <div class="wrap">
+      <div class="sec-head rv"><span class="en">Q&amp;A</span><h2>よくある質問</h2></div>
+      <div class="faq rv">
+        <details><summary>住んでいる地域が遠くても入会できますか？</summary><p>はい。面談・サポートはすべてオンラインで行うため、全国どこからでもご入会いただけます。お見合いは、お相手とご都合のよい場所で行います。</p></details>
+        <details><summary>無料面談では何をしますか？</summary><p>これまでの婚活のお話や、ご希望のお相手像を伺い、活動の進め方と料金をご説明します。その場で入会を決める必要はありません。</p></details>
+        <details><summary>入会に必要な書類は？</summary><p>IBJの規定にもとづき、本人確認書類・独身証明書・収入証明書（男性は必須）・最終学歴の証明書などが必要です。詳しくは面談でご案内します。</p></details>
+        <details><summary>婚活が初めてでも大丈夫ですか？</summary><p>もちろんです。プロフィール写真の準備から、お見合いでの会話、交際中のやりとりまで、一つずつサポートします。</p></details>
+        <details><summary>「フク先生」とは誰ですか？</summary><p>YouTubeやLINEで案内役をしている、ふくろうのキャラクターです。実際のカウンセリングは、代表のマリッジクリエイターが担当します。</p></details>
+        <details><summary>動画のお話は実話ですか？</summary><p>YouTubeなどの相談者・事例は、よくある婚活の悩みをもとにした創作です。実在の会員様の事例ではありません。</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta">
+    <div class="bg"></div>
+    <div class="wrap">
+      <div class="en rv">Let's create together</div>
+      <h2 class="rv d1">まずは、話してみることから。</h2>
+      <p class="rv d1">無理な勧誘は一切しません。婚活のお悩み相談だけでも大歓迎です。</p>
+      <div class="rv d2">
+        <a class="btn-line" href="https://lin.ee/t0CD8nW" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8-6C21.5 14.2 22 12.7 22 11c0-4.4-4.5-8-10-8z"/></svg>LINEで無料相談する</a>
+        <span class="sub"><a href="https://hudetaro.github.io/omiai-dojo/?from=hp" target="_blank" rel="noopener">まずは3分でお見合い力チェック（無料）</a></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 運営情報・法定表記 -->
+  <section id="legal" class="legal">
+    <div class="wrap">
+      <div class="sec-head" style="margin-bottom:36px"><span class="en">Information</span><h2 style="font-size:22px">運営者情報・特定商取引法に基づく表記</h2></div>
+      <table>
+        <tr><th>相談所名</th><td>結婚相談所 マリッジスタジオ（Marriage Studio）</td></tr>
+        <tr><th>代表者</th><td><span class="tbd">【代表者名（本名）】</span></td></tr>
+        <tr><th>所在地</th><td><span class="tbd">【所在地】</span></td></tr>
+        <tr><th>電話番号</th><td><span class="tbd">【電話番号】</span>（受付時間 <span class="tbd">【】</span>）</td></tr>
+        <tr><th>メールアドレス</th><td><span class="tbd">【メールアドレス】</span></td></tr>
+        <tr><th>加盟団体</th><td>IBJ（日本結婚相談所連盟）加盟</td></tr>
+        <tr><th>役務の内容</th><td>結婚相手紹介サービス（お見合いの調整、活動サポート、カウンセリング）</td></tr>
+        <tr><th>役務の対価</th><td>料金プランをご参照ください</td></tr>
+        <tr><th>対価以外に必要な費用</th><td>お見合い・デート時の飲食代、交通費、各種証明書の取得費用、通信費</td></tr>
+        <tr><th>支払方法・時期</th><td><span class="tbd">【例：銀行振込・クレジットカード／ご契約時】</span></td></tr>
+        <tr><th>役務の提供期間</th><td><span class="tbd">【例：ご入会日から1年間】</span></td></tr>
+        <tr><th>クーリング・オフ</th><td>契約書面を受け取った日から8日以内であれば、書面または電磁的記録により無条件で契約を解除できます。</td></tr>
+        <tr><th>中途解約</th><td>クーリング・オフ期間経過後も、特定商取引法の定める範囲で中途解約ができます。解約料は法令の上限を超えません。<span class="tbd">【詳細は規約で定めます】</span></td></tr>
+      </table>
+      <p class="note">※サイト内の写真はイメージです。</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="flogo"><small>Marriage Studio</small><b>マリッジスタジオ</b></div>
+  <nav>
+    <a href="#legal">特定商取引法に基づく表記</a>
+    <a href="#">プライバシーポリシー</a>
+    <a href="https://www.youtube.com/channel/UClz9nCXALjZfVts4ga1Dc_Q" target="_blank" rel="noopener">YouTube</a>
+    <a href="https://note.com/kekkon_fuku" target="_blank" rel="noopener">note</a>
+  </nav>
+  <p style="margin:0">© 結婚相談所 マリッジスタジオ</p>
+</footer>
+
+<div class="sticky-cta" id="stk"><a class="btn-line" href="https://lin.ee/t0CD8nW" target="_blank" rel="noopener">LINEで無料相談する</a></div>
+
+<script>
+const hd=document.getElementById('hd'),stk=document.getElementById('stk');
+const onScroll=()=>{const y=scrollY;hd.classList.toggle('solid',y>60);stk.classList.toggle('show',y>innerHeight*.6)};
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
