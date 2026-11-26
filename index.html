@@ -135,6 +135,31 @@ section{padding:120px 0;position:relative}
 .tool span{font-size:13px;color:var(--sub)}
 @media(max-width:900px){.media{grid-template-columns:1fr;gap:56px}.tools{grid-template-columns:1fr}}
 
+
+/* カウンセラー横スクロール */
+.cs{position:relative}
+.cs-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:28px;padding:6px 2px 40px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.cs-track::-webkit-scrollbar{display:none}
+.cs-slide{flex:0 0 100%;scroll-snap-align:center}
+.cs-nav{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:4px}
+.cs-btn{width:44px;height:44px;border-radius:50%;border:1px solid var(--gold);background:var(--card);color:var(--gold);font-size:24px;line-height:1;cursor:pointer;transition:.3s}
+.cs-btn:hover{background:var(--gold);color:#fff}
+.cs-dots{display:flex;gap:10px}
+.cs-dots i{width:8px;height:8px;border-radius:50%;background:var(--line);transition:.3s}
+.cs-dots i.on{background:var(--gold);width:22px;border-radius:4px}
+.owl.person{background:radial-gradient(circle at 50% 40%,#EFE7DD,#DCD0C2);overflow:hidden;align-items:flex-end}
+.owl.person .sil{width:76%;fill:#1E1A17;display:block}
+.cs-hint{font-size:13px;color:var(--gold)}
+/* 料金（3区分） */
+.price h4{font-family:var(--serif);font-weight:600;font-size:15px;letter-spacing:.14em;color:var(--gold);margin:28px 0 0;padding-bottom:6px;border-bottom:1px solid var(--gold)}
+.price h4:first-child{margin-top:18px}
+.price dt small{display:block;font-family:"Zen Kaku Gothic New",sans-serif;font-weight:400;font-size:12px;color:var(--sub);letter-spacing:.04em;margin-top:2px}
+.price dd{font-family:var(--serif);font-size:22px;font-weight:600;white-space:nowrap}
+.price dd span{font-size:13px;margin-left:3px;font-weight:500}
+.price .sum{background:var(--bg2);font-weight:700}
+.price dt.sum{padding-left:12px}
+.price dd.sum{padding-right:12px;color:var(--accent)}
+
 /* 料金 */
 .price{max-width:760px;margin:0 auto;background:var(--card);border-radius:6px;padding:16px 44px;box-shadow:0 30px 60px -30px rgba(80,50,30,.15)}
 .price dl{display:grid;grid-template-columns:1fr auto;margin:0}
@@ -260,23 +285,46 @@ footer nav a{color:#D9CCBB;margin:0 12px;text-decoration:none}
   <section id="counselor">
     <div class="wrap">
       <div class="sec-head rv"><span class="en">Counselor</span><h2>カウンセラー紹介</h2></div>
-      <div class="counselor rv">
-        <div>
-          <div class="owl"><img src="img/fuku_talk.png" alt="案内役のフク先生"></div>
-          <div class="owl-cap">YouTube・LINEの案内役「フク先生」</div>
-        </div>
-        <div>
-          <span class="title-badge">Marriage Creator</span>
-          <h3>マリッジクリエイター</h3>
-          <p class="role">結婚相談所マリッジクリエイトNeo 代表</p>
-          <p>ふだんはゲーム制作やYouTubeなど、ものづくりの仕事をしています。「つくる」ことが好きな自分だからこそ、婚活も、あなたといっしょにつくっていきたいと考えています。</p>
-          <p><span class="tbd">【ここにご本人の婚活経験・この仕事を始めた理由などを入れます】</span></p>
-          <p>うまくいかない婚活には、必ず理由があります。責めるのではなく、「どうすれば伝わるか」をいっしょに考える。それがマリッジクリエイトNeoのスタイルです。</p>
-          <div class="links">
-            <a href="https://www.youtube.com/channel/UClz9nCXALjZfVts4ga1Dc_Q" target="_blank" rel="noopener">▶ YouTube「フク先生の婚活相談室」</a>
-            <a href="https://note.com/kekkon_fuku" target="_blank" rel="noopener">note 婚活コラム</a>
-            <a href="https://hudetaro.github.io/fuku-shindan/" target="_blank" rel="noopener">30秒 結婚タイプ診断</a>
+      <div class="cs rv">
+        <div class="cs-track" id="csTrack">
+          <div class="counselor cs-slide">
+            <div>
+              <div class="owl person"><svg class="sil" viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="74" r="38"/><path d="M28 196c4-52 34-80 72-80s68 28 72 80z"/></svg></div>
+              <div class="owl-cap">カウンセラー本人</div>
+            </div>
+            <div>
+              <span class="title-badge">Marriage Creator</span>
+              <h3>マリッジクリエイター</h3>
+              <p class="role">結婚相談所マリッジクリエイトNeo 代表</p>
+              <p>ふだんはゲーム制作やYouTubeなど、ものづくりの仕事をしています。「つくる」ことが好きな自分だからこそ、婚活も、あなたといっしょにつくっていきたいと考えています。</p>
+              <p><span class="tbd">【ここにご本人の婚活経験・この仕事を始めた理由などを入れます】</span></p>
+              <p>うまくいかない婚活には、必ず理由があります。責めるのではなく、「どうすれば伝わるか」をいっしょに考える。それがマリッジクリエイトNeoのスタイルです。</p>
+              <p class="cs-hint">実際の面談・サポートは、このカウンセラーが担当します。</p>
+            </div>
           </div>
+          <div class="counselor cs-slide">
+            <div>
+              <div class="owl"><img src="img/fuku_talk.png" alt="案内役のフク先生"></div>
+              <div class="owl-cap">案内役のキャラクター</div>
+            </div>
+            <div>
+              <span class="title-badge">Guide Character</span>
+              <h3>フク先生</h3>
+              <p class="role">YouTube・LINE・ゲームの案内役</p>
+              <p>婚活の悩みにやさしく赤ペンを入れる、ふくろうの先生です。YouTube「フク先生の婚活相談室」や公式LINE、お見合い道場で、婚活のコツをわかりやすくお伝えしています。</p>
+              <p>※フク先生はキャラクターです。実際のカウンセリングは、代表のマリッジクリエイターが担当します。</p>
+              <div class="links">
+                <a href="https://www.youtube.com/channel/UClz9nCXALjZfVts4ga1Dc_Q" target="_blank" rel="noopener">▶ YouTube「フク先生の婚活相談室」</a>
+                <a href="https://note.com/kekkon_fuku" target="_blank" rel="noopener">note 婚活コラム</a>
+                <a href="https://hudetaro.github.io/fuku-shindan/" target="_blank" rel="noopener">30秒 結婚タイプ診断</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cs-nav">
+          <button type="button" class="cs-btn" data-d="-1" aria-label="前へ">‹</button>
+          <span class="cs-dots" id="csDots"><i class="on"></i><i></i></span>
+          <button type="button" class="cs-btn" data-d="1" aria-label="次へ">›</button>
         </div>
       </div>
     </div>
@@ -314,12 +362,21 @@ footer nav a{color:#D9CCBB;margin:0 12px;text-decoration:none}
     <div class="wrap">
       <div class="sec-head rv"><span class="en">Price</span><h2>料金プラン</h2><p>くわしい内容は、無料面談でご説明します。</p></div>
       <div class="price rv">
+        <h4>初期費用</h4>
         <dl>
-          <dt>入会金</dt><dd><span class="tbd">【金額】</span></dd>
-          <dt>登録料</dt><dd><span class="tbd">【金額】</span></dd>
-          <dt>月会費</dt><dd><span class="tbd">【金額】</span></dd>
-          <dt>お見合い料</dt><dd><span class="tbd">【金額】</span></dd>
-          <dt>成婚料</dt><dd><span class="tbd">【金額】</span></dd>
+          <dt>入会金<small>相談所に入会し、活動を始めるための費用</small></dt><dd>50,000<span>円</span></dd>
+          <dt>登録料<small>会員情報・プロフィールのシステム登録費用</small></dt><dd>30,000<span>円</span></dd>
+          <dt>活動サポート費</dt><dd>0<span>円</span></dd>
+          <dt class="sum">初期費用 合計</dt><dd class="sum">80,000<span>円</span></dd>
+        </dl>
+        <h4>活動中の費用</h4>
+        <dl>
+          <dt>月会費<small>活動の継続・定期フォロー・活動相談</small></dt><dd>10,000<span>円／月</span></dd>
+          <dt>お見合い料<small>お見合いの日程調整・実施後の振り返り</small></dt><dd>0<span>円</span></dd>
+        </dl>
+        <h4>ご成婚時</h4>
+        <dl>
+          <dt>成婚料<small>ご成婚に至った際の成功報酬</small></dt><dd>200,000<span>円</span></dd>
         </dl>
       </div>
       <p class="note">※表示価格はすべて税込です。</p>
@@ -412,6 +469,11 @@ const onScroll=()=>{const y=scrollY;hd.classList.toggle('solid',y>60);stk.classL
 addEventListener('scroll',onScroll,{passive:true});onScroll();
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.15});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+const csT=document.getElementById('csTrack'),csD=[...document.querySelectorAll('#csDots i')];
+if(csT){const go=d=>csT.scrollBy({left:d*csT.clientWidth,behavior:'smooth'});
+document.querySelectorAll('.cs-btn').forEach(b=>b.onclick=()=>go(+b.dataset.d));
+csT.addEventListener('scroll',()=>{const i=Math.round(csT.scrollLeft/csT.clientWidth);csD.forEach((e,j)=>e.classList.toggle('on',i===j))},{passive:true});}
 </script>
 </body>
 </html>
