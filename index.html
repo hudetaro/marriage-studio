@@ -3,224 +3,265 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>結婚相談所 マリッジクリエイトNeo｜あなたの結婚を、いっしょにつくる（IBJ加盟・全国オンライン）</title>
-<meta name="description" content="結婚相談所マリッジクリエイトNeoは、あなたの結婚をいっしょにつくるIBJ加盟の結婚相談所です。マリッジクリエイターが、プロフィール作りからお見合い・交際・成婚まで、全国オンラインで伴走します。">
+<title>結婚相談所 マリッジクリエイトNeo｜あなたの結婚を、いっしょにつくる冒険へ（IBJ加盟・全国オンライン）</title>
+<meta name="description" content="結婚相談所マリッジクリエイトNeoは、婚活を「いっしょにつくる冒険」に変えるIBJ加盟の結婚相談所です。マリッジクリエイターが、プロフィール作りからお見合い・交際・成婚まで、全国オンラインで伴走します。">
 <meta property="og:title" content="結婚相談所 マリッジクリエイトNeo">
 <meta property="og:description" content="あなたの結婚を、いっしょにつくる。IBJ加盟・全国オンライン対応の結婚相談所です。">
-<meta property="og:image" content="img/hero.jpg">
+<meta property="og:image" content="img/rpg/hero.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Shippori+Mincho:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=DotGothic16&family=Shippori+Mincho:wght@600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#FBF7F1; --bg2:#F4ECE1; --card:#FFFFFF; --ink:#2F2620; --sub:#6E6258; --line:#E6DACB;
-  --accent:#C8674F; --accent-d:#A9523D; --gold:#B8955A; --green:#06C755; --tbd:#FFF1A8;
-  --serif:"Shippori Mincho","Yu Mincho",serif; --en:"Cormorant Garamond",serif;
+  --night:#11172C; --night2:#1B2340; --night3:#26305A; --gold:#E2BE6A; --gold2:#B8913F; --gold-l:#F7E3A8;
+  --parch:#F5EBD6; --parch2:#EADBB9; --ink:#2B2232; --sub:#6B5E6E; --rose:#E8728A; --mint:#6FD3B5; --line:#06C755; --tbd:#FFF1A8;
+  --dot:"DotGothic16",monospace; --serif:"Shippori Mincho",serif; --en:"Cinzel",serif;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:"Zen Kaku Gothic New","Hiragino Sans","Yu Gothic",sans-serif;line-height:1.95;font-weight:400;letter-spacing:.04em;-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--night);color:var(--ink);font-family:"Zen Kaku Gothic New","Hiragino Sans","Yu Gothic",sans-serif;line-height:1.95;letter-spacing:.04em;-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
 a{color:inherit}
-.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
-.tbd{background:var(--tbd);border-radius:4px;padding:0 4px}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+.tbd{background:var(--tbd);color:#3a2f00;border-radius:4px;padding:0 4px}
+
+/* ===== RPGウィンドウ ===== */
+.win{position:relative;background:linear-gradient(180deg,rgba(38,48,90,.97),rgba(20,27,52,.97));color:#F4F1FF;border:3px solid #fff;border-radius:12px;box-shadow:0 0 0 3px var(--night),0 0 0 5px var(--gold2),0 18px 40px -12px rgba(0,0,0,.6);padding:26px 28px}
+.win::before{content:"";position:absolute;inset:5px;border:1px solid rgba(226,190,106,.45);border-radius:7px;pointer-events:none}
+.win.light{background:linear-gradient(180deg,#FFFBF1,#F7EBD0);color:var(--ink);border-color:var(--gold2);box-shadow:0 0 0 3px #fff,0 0 0 5px var(--gold2),0 18px 40px -16px rgba(80,50,20,.45)}
+.win.light::before{border-color:rgba(184,145,63,.35)}
+.cursor{display:inline-block;color:var(--gold);animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.tri{display:inline-block;color:var(--gold);animation:bob 1s ease-in-out infinite;font-size:14px}
+@keyframes bob{50%{transform:translateY(4px)}}
 
 /* ふわっと表示 */
-.rv{opacity:0;transform:translateY(28px);transition:opacity 1s ease,transform 1s ease}
+.rv{opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s ease}
 .rv.on{opacity:1;transform:none}
 .rv.d1{transition-delay:.15s}.rv.d2{transition-delay:.3s}.rv.d3{transition-delay:.45s}
 
-/* ヘッダー */
+/* ===== ヘッダー ===== */
 header{position:fixed;top:0;left:0;right:0;z-index:30;transition:background .4s,box-shadow .4s}
-header.solid{background:rgba(251,247,241,.94);backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line)}
-header .wrap{display:flex;align-items:center;justify-content:space-between;height:76px;gap:16px;max-width:1280px}
-.logo{display:flex;flex-direction:column;text-decoration:none;line-height:1.1;color:#fff;transition:color .4s}
-header.solid .logo{color:var(--ink)}
-.logo small{font-size:11px;letter-spacing:.25em;opacity:.85}
-.logo b{font-family:var(--serif);font-size:22px;font-weight:700;letter-spacing:.12em}
-nav a{font-size:13px;text-decoration:none;margin-left:26px;color:#fff;letter-spacing:.12em;transition:color .3s}
-header.solid nav a{color:var(--sub)}
-nav a:hover{color:var(--gold)!important}
-@media(max-width:900px){header nav{display:none}}
-.logo b,.btn-line{white-space:nowrap}
-@media(max-width:480px){.logo b{font-size:17px;letter-spacing:.04em}.btn-line.small{padding:8px 14px;font-size:12px}}
+header.solid{background:rgba(17,23,44,.92);backdrop-filter:blur(10px);box-shadow:0 1px 0 rgba(226,190,106,.35)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px;max-width:1300px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff}
+.logo svg{width:34px;height:34px;flex:none}
+.logo span{display:flex;flex-direction:column;line-height:1.15}
+.logo small{font-size:10.5px;letter-spacing:.25em;color:var(--gold-l)}
+.logo b{font-family:var(--serif);font-size:20px;font-weight:700;letter-spacing:.06em;white-space:nowrap}
+nav a{font-family:var(--dot);font-size:14px;text-decoration:none;margin-left:22px;color:#E9E4FF;letter-spacing:.08em;position:relative}
+nav a::before{content:"▶";position:absolute;left:-14px;font-size:10px;top:3px;color:var(--gold);opacity:0;transition:.2s}
+nav a:hover{color:var(--gold)}
+nav a:hover::before{opacity:1}
+@media(max-width:960px){header nav{display:none}}
+@media(max-width:480px){.logo b{font-size:16px}.logo svg{width:28px;height:28px}}
 
-/* ボタン */
-.btn-line{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--green);color:#fff;font-weight:700;text-decoration:none;border-radius:999px;padding:16px 34px;font-size:16px;letter-spacing:.08em;box-shadow:0 10px 24px rgba(6,199,85,.28);transition:transform .2s,box-shadow .2s}
-.btn-line:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(6,199,85,.35)}
-.btn-line.small{padding:9px 18px;font-size:13px;box-shadow:none}
+/* ===== ボタン ===== */
+.btn-line{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(180deg,#2EE07A,#06B54C);color:#fff;font-weight:700;text-decoration:none;border-radius:10px;padding:15px 30px;font-size:16px;letter-spacing:.06em;border:2px solid #fff;box-shadow:0 0 0 2px #04913C,0 8px 0 #04913C,0 14px 24px rgba(0,0,0,.35);transition:transform .15s,box-shadow .15s;white-space:nowrap}
+.btn-line:hover{transform:translateY(3px);box-shadow:0 0 0 2px #04913C,0 5px 0 #04913C,0 10px 18px rgba(0,0,0,.35)}
+.btn-line:active{transform:translateY(7px);box-shadow:0 0 0 2px #04913C,0 1px 0 #04913C}
 .btn-line svg{width:20px;height:20px}
-.btn-ghost{display:inline-flex;align-items:center;gap:8px;color:#fff;text-decoration:none;font-size:14px;letter-spacing:.1em;border-bottom:1px solid rgba(255,255,255,.6);padding-bottom:3px;margin-left:24px}
-.btn-ghost:hover{border-color:#fff}
+.btn-line.small{padding:8px 16px;font-size:13px;box-shadow:0 0 0 2px #04913C,0 4px 0 #04913C}
 
-/* ヒーロー */
-.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;overflow:hidden;color:#fff}
-.hero .bg{position:absolute;inset:0;background:url(img/hero.jpg) 65% center/cover;transform:scale(1.08);animation:zoom 14s ease-out forwards}
+/* ===== ヒーロー ===== */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;overflow:hidden;color:#fff;padding:110px 0 60px}
+.hero .bg{position:absolute;inset:0;background:url(img/rpg/hero.jpg) 60% center/cover;transform:scale(1.08);animation:zoom 16s ease-out forwards}
 @keyframes zoom{to{transform:scale(1)}}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(35,26,20,.72) 0%,rgba(35,26,20,.42) 45%,rgba(35,26,20,.05) 80%)}
-.hero .wrap{position:relative;z-index:2;width:100%;max-width:1280px}
-.hero .en{font-family:var(--en);font-style:italic;font-size:clamp(18px,2vw,24px);letter-spacing:.12em;color:#F2DDBF}
-.hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(32px,4.4vw,58px);line-height:1.45;letter-spacing:.1em;margin:14px 0 22px}
-.hero p{max-width:520px;font-size:15px;line-height:2.1;opacity:.92;margin:0 0 36px}
-.hero .badges{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px}
-.hero .badges span{border:1px solid rgba(255,255,255,.55);border-radius:999px;padding:4px 14px;font-size:12px;letter-spacing:.14em}
-.scroll{position:absolute;left:50%;bottom:26px;z-index:2;transform:translateX(-50%);font-family:var(--en);font-size:12px;letter-spacing:.3em;color:#fff;opacity:.8;text-align:center}
-.scroll::after{content:"";display:block;width:1px;height:46px;margin:8px auto 0;background:linear-gradient(#fff,transparent);animation:line 2s infinite}
-@keyframes line{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
-@media(max-width:760px){.hero::after{background:linear-gradient(180deg,rgba(35,26,20,.25),rgba(35,26,20,.75))}.hero{align-items:flex-end;padding-bottom:110px}.scroll{display:none}.btn-ghost{margin:18px 0 0}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(17,23,44,.82) 0%,rgba(17,23,44,.45) 42%,rgba(17,23,44,0) 72%),linear-gradient(0deg,rgba(17,23,44,.85),rgba(17,23,44,0) 35%)}
+.hero .wrap{position:relative;z-index:2;width:100%;max-width:1300px}
+.spark{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.spark i{position:absolute;bottom:-10px;width:4px;height:4px;border-radius:50%;background:var(--gold-l);box-shadow:0 0 8px 2px rgba(247,227,168,.8);animation:rise linear infinite;opacity:.0}
+@keyframes rise{0%{transform:translateY(0);opacity:0}15%{opacity:.9}100%{transform:translateY(-105vh) translateX(30px);opacity:0}}
+.hero .stage{font-family:var(--dot);font-size:14px;letter-spacing:.3em;color:var(--gold-l);display:inline-flex;align-items:center;gap:10px}
+.hero .stage::before,.hero .stage::after{content:"";width:28px;height:1px;background:var(--gold)}
+.hero h1{font-family:var(--serif);font-weight:800;font-size:clamp(34px,5vw,66px);line-height:1.4;letter-spacing:.08em;margin:16px 0 18px;text-shadow:0 4px 24px rgba(0,0,0,.6)}
+.hero h1 em{font-style:normal;background:linear-gradient(180deg,#FFF6D6 10%,#E2BE6A 60%,#B8913F);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 2px 0 rgba(0,0,0,.35))}
+.hero .badges{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:26px}
+.hero .badges span{font-family:var(--dot);font-size:13px;letter-spacing:.06em;background:rgba(17,23,44,.6);border:1px solid var(--gold);color:var(--gold-l);border-radius:6px;padding:3px 12px}
+.talk{max-width:640px;display:grid;grid-template-columns:96px 1fr;gap:18px;align-items:start;padding:20px 22px 18px}
+.talk .face{width:96px;height:96px;border-radius:10px;background:radial-gradient(circle at 50% 40%,#3B4A8A,#1B2340);border:2px solid var(--gold);overflow:hidden}
+.talk .face img{width:100%;height:100%;object-fit:cover;object-position:50% 18%}
+.talk .who{font-family:var(--dot);color:var(--gold);font-size:14px;letter-spacing:.1em}
+.talk .msg{font-family:var(--dot);font-size:17px;line-height:1.85;min-height:3.7em;margin:2px 0 10px;letter-spacing:.05em}
+.choices{display:flex;flex-direction:column;gap:4px;font-family:var(--dot)}
+.choices a{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-size:16px;padding:2px 4px;color:#fff;width:max-content}
+.choices a::before{content:"▶";font-size:12px;color:var(--gold);opacity:0}
+.choices a:hover::before,.choices a.sel::before{opacity:1}
+.choices a.go{color:#7CF5AE}
+.talk>div{min-width:0}
+@media(max-width:760px){.choices a{width:auto;font-size:14.5px;align-items:flex-start}.choices a::before{margin-top:4px}}
+.hero .lead{max-width:560px;font-size:14.5px;opacity:.9;margin:22px 0 0;text-shadow:0 2px 8px rgba(0,0,0,.6)}
+@media(max-width:760px){.hero{align-items:flex-end}.hero::after{background:linear-gradient(180deg,rgba(17,23,44,.2),rgba(17,23,44,.88) 55%)}.talk{grid-template-columns:64px 1fr;gap:12px;padding:16px}.talk .face{width:64px;height:64px}.talk .msg{font-size:15px}}
 
-/* セクション共通 */
+/* ===== セクション共通 ===== */
 section{padding:120px 0;position:relative}
-.sec-head{text-align:center;margin-bottom:64px}
-.sec-head .en{display:block;font-family:var(--en);font-style:italic;color:var(--gold);font-size:20px;letter-spacing:.16em}
-.sec-head h2{font-family:var(--serif);font-weight:600;font-size:clamp(24px,3.4vw,36px);letter-spacing:.12em;margin:6px 0 0;line-height:1.6}
-.sec-head h2::after{content:"";display:block;width:36px;height:1px;background:var(--gold);margin:22px auto 0}
-.sec-head p{color:var(--sub);margin:22px auto 0;max-width:620px}
-.bg2{background:var(--bg2)}
+.night{background:radial-gradient(ellipse at 50% 0%,#24305E 0%,var(--night) 60%);color:#EDEAFF}
+.parch{background:var(--parch) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.8' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 .55 0 0 0 0 .42 0 0 0 0 .2 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");color:var(--ink)}
+.night .stars{position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(1px 1px at 20% 30%,#fff8 50%,transparent),radial-gradient(1px 1px at 70% 20%,#fff9 50%,transparent),radial-gradient(1.5px 1.5px at 40% 70%,#fff6 50%,transparent),radial-gradient(1px 1px at 85% 60%,#fff8 50%,transparent),radial-gradient(1px 1px at 10% 80%,#fff7 50%,transparent),radial-gradient(1.5px 1.5px at 55% 45%,#ffe9a880 50%,transparent);background-size:420px 420px}
+.sec-head{text-align:center;margin-bottom:60px;position:relative}
+.sec-head .en{display:inline-flex;align-items:center;gap:12px;font-family:var(--en);font-weight:700;font-size:15px;letter-spacing:.3em;color:var(--gold2)}
+.night .sec-head .en{color:var(--gold)}
+.sec-head .en::before,.sec-head .en::after{content:"◆";font-size:9px}
+.sec-head h2{font-family:var(--serif);font-weight:800;font-size:clamp(26px,3.6vw,40px);letter-spacing:.1em;margin:8px 0 0;line-height:1.5}
+.sec-head p{color:var(--sub);margin:18px auto 0;max-width:640px}
+.night .sec-head p{color:#C9C3E6}
+.orn{display:block;width:180px;height:14px;margin:18px auto 0}
 
-/* 名前の由来 */
-.origin{display:grid;grid-template-columns:1.1fr 1fr;gap:72px;align-items:center}
-.photo{position:relative;z-index:0}
-.photo img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:4px}
-.photo::before{content:"";position:absolute;inset:22px -22px -22px 22px;border:1px solid var(--gold);border-radius:4px;z-index:-1}
-.origin .word{font-family:var(--en);font-size:clamp(40px,5vw,62px);line-height:1;color:var(--accent);letter-spacing:.02em}
-.origin .formula{font-size:14px;color:var(--sub);margin:14px 0 26px;letter-spacing:.1em}
-.origin h3{font-family:var(--serif);font-size:24px;font-weight:600;margin:0 0 18px;letter-spacing:.1em;line-height:1.7}
-.origin p{color:var(--sub);margin:0 0 14px}
-@media(max-width:900px){.origin{grid-template-columns:1fr;gap:56px}}
+/* ===== STORY（名前の由来） ===== */
+.story{display:grid;grid-template-columns:1fr 1.05fr;gap:64px;align-items:center}
+.crest{position:relative;aspect-ratio:1;max-width:440px;margin:0 auto;display:flex;align-items:center;justify-content:center}
+.crest svg{position:absolute;inset:0;width:100%;height:100%;animation:spin 60s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.crest .in{position:relative;text-align:center;font-family:var(--en);color:var(--night)}
+.crest .in b{display:block;font-size:clamp(30px,4vw,44px);line-height:1.05;letter-spacing:.04em}
+.crest .in b em{font-style:normal;color:var(--rose)}
+.crest .in small{display:block;font-family:var(--dot);font-size:13px;color:var(--sub);margin-top:10px;letter-spacing:.1em}
+.equation{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 22px;font-family:var(--dot)}
+.equation span{background:var(--night2);color:#fff;border-radius:6px;padding:4px 12px;font-size:14px}
+.equation span b{color:var(--gold);font-weight:400;margin-right:6px}
+.equation i{font-style:normal;color:var(--gold2);font-size:18px}
+.story h3{font-family:var(--serif);font-size:26px;font-weight:800;margin:0 0 16px;letter-spacing:.08em;line-height:1.6}
+.story p{margin:0 0 14px;color:#4A3F4E}
+@media(max-width:900px){.story{grid-template-columns:1fr;gap:40px}}
 
-/* 特徴 */
-.features{display:grid;grid-template-columns:repeat(3,1fr);gap:36px}
-.feature img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:4px;transition:transform .8s}
-.feature .ph{overflow:hidden;border-radius:4px}
-.feature:hover img{transform:scale(1.04)}
-.feature .no{font-family:var(--en);font-size:44px;color:var(--gold);line-height:1;margin:22px 0 4px;font-style:italic}
-.feature h3{font-family:var(--serif);font-size:21px;font-weight:600;margin:0 0 10px;letter-spacing:.08em}
-.feature p{margin:0;color:var(--sub);font-size:14.5px}
-@media(max-width:900px){.features{grid-template-columns:1fr;gap:56px}}
+/* ===== ITEMS（特徴） ===== */
+.items{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+.item{padding:22px 22px 26px;text-align:center;transition:transform .3s}
+.item:hover{transform:translateY(-6px)}
+.item .ic{width:150px;height:150px;margin:6px auto 12px;border-radius:50%;overflow:hidden;box-shadow:0 0 0 2px var(--gold),0 0 34px rgba(226,190,106,.35)}
+.item .ic img{width:100%;height:100%;object-fit:cover}
+.item .rare{font-family:var(--dot);color:var(--gold);font-size:13px;letter-spacing:.2em}
+.item h3{font-family:var(--serif);font-size:21px;font-weight:700;margin:4px 0 10px;letter-spacing:.06em;color:#fff}
+.item p{margin:0;font-size:14.5px;color:#D7D2F0;text-align:left}
+.item .get{display:inline-block;margin-top:14px;font-family:var(--dot);font-size:13px;color:var(--mint)}
+@media(max-width:900px){.items{grid-template-columns:1fr;max-width:480px;margin:0 auto}}
 
-/* カウンセラー */
-.counselor{display:grid;grid-template-columns:300px 1fr;gap:64px;align-items:center;background:var(--card);padding:56px;border-radius:6px;box-shadow:0 30px 60px -30px rgba(80,50,30,.18)}
-.counselor .owl{width:300px;height:300px;border-radius:50%;background:radial-gradient(circle at 50% 40%,#FBEBDD,#F1DCC6);display:flex;align-items:center;justify-content:center}
-.counselor .owl img{width:78%}
-.counselor .owl-cap{text-align:center;font-size:12px;color:var(--sub);margin-top:12px}
-.title-badge{display:inline-block;font-family:var(--en);font-style:italic;font-size:15px;letter-spacing:.14em;color:var(--gold);border-top:1px solid var(--gold);border-bottom:1px solid var(--gold);padding:2px 12px}
-.counselor h3{font-family:var(--serif);font-size:34px;font-weight:600;letter-spacing:.16em;margin:12px 0 2px}
-.counselor .role{color:var(--sub);font-size:13px;margin:0 0 22px;letter-spacing:.12em}
-.counselor p{margin:0 0 14px}
-.links{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
-.links a{border:1px solid var(--line);border-radius:999px;padding:7px 16px;font-size:13px;text-decoration:none;transition:.3s}
-.links a:hover{border-color:var(--accent);color:var(--accent)}
-@media(max-width:900px){.counselor{grid-template-columns:1fr;padding:36px 24px;text-align:center}.counselor .owl{width:220px;height:220px;margin:0 auto}.links{justify-content:center}}
-
-/* 発信（YouTube・note） */
-.media{display:grid;grid-template-columns:1.25fr 1fr;gap:48px;align-items:start}
-.media h3{font-family:var(--serif);font-size:19px;font-weight:600;letter-spacing:.08em;margin:0 0 16px;display:flex;align-items:center;gap:10px}
-.media h3 .ic{font-family:var(--en);font-style:italic;color:var(--gold);font-size:18px}
-.yt{position:relative;aspect-ratio:16/9;border-radius:6px;overflow:hidden;background:#000;box-shadow:0 30px 60px -30px rgba(80,50,30,.35)}
-.yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-.more{display:inline-block;margin-top:16px;font-size:13.5px;letter-spacing:.1em;text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:2px}
-.more:hover{color:var(--accent)}
-.notes{display:flex;flex-direction:column;gap:14px}
-.ncard{display:grid;grid-template-columns:132px 1fr;gap:16px;align-items:center;background:var(--card);border-radius:6px;padding:12px;text-decoration:none;box-shadow:0 14px 30px -22px rgba(80,50,30,.35);transition:transform .3s}
-.ncard:hover{transform:translateY(-3px)}
-.ncard img{width:132px;aspect-ratio:1.91/1;object-fit:cover;border-radius:4px}
-.ncard b{font-weight:500;font-size:14px;line-height:1.7;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-.ncard small{display:block;color:var(--sub);font-size:11.5px;margin-top:4px}
-.tools{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:56px}
-.tool{display:flex;gap:18px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:6px;padding:22px 24px;text-decoration:none;transition:border-color .3s,transform .3s}
-.tool:hover{border-color:var(--gold);transform:translateY(-3px)}
-.tool img{width:64px;height:64px;flex:none}
-.tool b{display:block;font-family:var(--serif);font-size:17px;letter-spacing:.06em}
-.tool span{font-size:13px;color:var(--sub)}
-@media(max-width:900px){.media{grid-template-columns:1fr;gap:56px}.tools{grid-template-columns:1fr}}
-
-
-/* カウンセラー横スクロール */
-.cs{position:relative}
-.cs-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:28px;padding:6px 2px 40px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+/* ===== PARTY（カウンセラー） ===== */
+.cs-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:28px;padding:8px 6px 30px;scrollbar-width:none}
 .cs-track::-webkit-scrollbar{display:none}
-.cs-slide{flex:0 0 100%;scroll-snap-align:center}
-.cs-nav{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:4px}
-.cs-btn{width:44px;height:44px;border-radius:50%;border:1px solid var(--gold);background:var(--card);color:var(--gold);font-size:24px;line-height:1;cursor:pointer;transition:.3s}
-.cs-btn:hover{background:var(--gold);color:#fff}
+.cs-slide{flex:0 0 calc(100% - 12px);scroll-snap-align:center}
+.status{display:grid;grid-template-columns:300px 1fr;gap:44px;align-items:start;padding:36px 40px}
+.portrait{position:relative;border-radius:10px;overflow:hidden;border:2px solid var(--gold);aspect-ratio:1;background:radial-gradient(circle at 50% 35%,#F8EBCF,#E6D2A8)}
+.portrait img{width:100%;height:100%;object-fit:cover}
+.portrait .sil{position:absolute;left:12%;right:12%;bottom:0;fill:#15121A}
+.portrait .tag{position:absolute;left:10px;top:10px;font-family:var(--dot);font-size:12px;background:var(--night);color:var(--gold);border-radius:4px;padding:1px 8px}
+.st-name{font-family:var(--serif);font-weight:800;font-size:32px;letter-spacing:.12em;margin:0;line-height:1.3}
+.st-name small{font-family:var(--en);font-size:14px;letter-spacing:.24em;color:var(--gold);margin-left:12px}
+.st-job{font-family:var(--dot);color:var(--gold-l);font-size:14px;margin:6px 0 16px}
+.bars{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;align-items:center;font-family:var(--dot);font-size:14px;margin-bottom:18px}
+.bar{height:12px;border-radius:6px;background:#0C1123;border:1px solid #4B5690;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--mint),#BFF7E5);transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
+.bar.mp i{background:linear-gradient(90deg,#7A8CFF,#C9D0FF)}
+.bar.lv i{background:linear-gradient(90deg,var(--rose),#FFC2CE)}
+.on .bar i{width:var(--w)}
+.status p{margin:0 0 12px;font-size:14.5px;color:#E3DFF7}
+.skills{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 14px}
+.skills span{font-family:var(--dot);font-size:13px;border:1px solid var(--gold2);color:var(--gold-l);border-radius:5px;padding:1px 10px}
+.links{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.links a{font-family:var(--dot);font-size:13px;text-decoration:none;border:1px solid #6A76B5;border-radius:6px;padding:4px 12px;color:#E9E4FF;transition:.2s}
+.links a:hover{border-color:var(--gold);color:var(--gold)}
+.cs-nav{display:flex;align-items:center;justify-content:center;gap:18px}
+.cs-btn{font-family:var(--dot);min-width:120px;height:44px;border-radius:8px;border:2px solid #fff;background:var(--night2);color:#fff;font-size:15px;cursor:pointer;box-shadow:0 0 0 2px var(--gold2);transition:.2s}
+.cs-btn:hover{background:var(--gold2)}
 .cs-dots{display:flex;gap:10px}
-.cs-dots i{width:8px;height:8px;border-radius:50%;background:var(--line);transition:.3s}
-.cs-dots i.on{background:var(--gold);width:22px;border-radius:4px}
-.owl.person{background:radial-gradient(circle at 50% 40%,#EFE7DD,#DCD0C2);overflow:hidden;align-items:flex-end}
-.owl.person .sil{width:76%;fill:#1E1A17;display:block}
-.counselor h3 .roma{display:block;font-family:var(--en);font-style:italic;font-size:15px;letter-spacing:.2em;color:var(--sub);font-weight:500;margin-top:2px}
-.cs-hint{font-size:13px;color:var(--gold)}
-/* 料金（3区分） */
-.price h4{font-family:var(--serif);font-weight:600;font-size:15px;letter-spacing:.14em;color:var(--gold);margin:28px 0 0;padding-bottom:6px;border-bottom:1px solid var(--gold)}
-.price h4:first-child{margin-top:18px}
-.price dt small{display:block;font-family:"Zen Kaku Gothic New",sans-serif;font-weight:400;font-size:12px;color:var(--sub);letter-spacing:.04em;margin-top:2px}
-.price dd{font-family:var(--serif);font-size:22px;font-weight:600;white-space:nowrap}
-.price dd span{font-size:13px;margin-left:3px;font-weight:500}
-.price dd em{display:block;font-style:normal;font-family:"Zen Kaku Gothic New",sans-serif;font-size:11.5px;font-weight:400;color:var(--sub);letter-spacing:.04em}
-.price .sum{background:var(--bg2);font-weight:700}
-.price dt.sum{padding-left:12px}
-.price dd.sum{padding-right:12px;color:var(--accent)}
+.cs-dots i{width:10px;height:10px;transform:rotate(45deg);background:#4B5690;transition:.3s}
+.cs-dots i.on{background:var(--gold)}
+@media(max-width:900px){.status{grid-template-columns:1fr;padding:26px 20px;gap:24px}.portrait{max-width:260px;margin:0 auto;width:100%}.st-name{font-size:26px}.cs-btn{min-width:90px}}
 
-/* 料金 */
-.price{max-width:760px;margin:0 auto;background:var(--card);border-radius:6px;padding:16px 44px;box-shadow:0 30px 60px -30px rgba(80,50,30,.15)}
-.price dl{display:grid;grid-template-columns:1fr auto;margin:0}
-.price dt,.price dd{padding:22px 0;border-bottom:1px solid var(--line);margin:0}
-.price dt{font-family:var(--serif);font-weight:600;letter-spacing:.1em}
-.price dd{text-align:right}
-.price dl>*:nth-last-child(-n+2){border-bottom:none}
-.note{font-size:12.5px;color:var(--sub);text-align:center;margin-top:18px}
+/* ===== LIBRARY（発信） ===== */
+.media{display:grid;grid-template-columns:1.25fr 1fr;gap:40px;align-items:start}
+.media h3{font-family:var(--dot);font-weight:400;font-size:17px;letter-spacing:.08em;margin:0 0 14px;color:var(--night2)}
+.media h3 b{color:var(--rose);font-weight:400;margin-right:8px}
+.yt{position:relative;aspect-ratio:16/9;border-radius:8px;overflow:hidden;background:#000;border:3px solid var(--night2);box-shadow:0 0 0 2px var(--gold2),0 20px 40px -20px rgba(0,0,0,.5)}
+.yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.more{display:inline-block;margin-top:14px;font-family:var(--dot);font-size:14px;text-decoration:none;color:var(--night2)}
+.more::before{content:"▶ ";color:var(--gold2)}
+.notes{display:flex;flex-direction:column;gap:12px}
+.ncard{display:grid;grid-template-columns:128px 1fr;gap:14px;align-items:center;padding:10px;text-decoration:none;transition:transform .2s}
+.ncard:hover{transform:translateX(4px)}
+.ncard img{width:128px;aspect-ratio:1.91/1;object-fit:cover;border-radius:5px}
+.ncard b{font-weight:500;font-size:13.5px;line-height:1.65;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.ncard small{display:block;color:var(--sub);font-size:11.5px;margin-top:2px;font-family:var(--dot)}
+.tools{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:50px}
+.tool{display:flex;gap:18px;align-items:center;text-decoration:none;padding:18px 22px;transition:transform .2s}
+.tool:hover{transform:translateY(-4px)}
+.tool img{width:70px;height:70px;flex:none;border-radius:8px;object-fit:cover;background:#F6EEDC}
+.tool .mini{font-family:var(--dot);font-size:12px;color:var(--mint)}
+.tool b{display:block;font-family:var(--serif);font-size:18px;letter-spacing:.06em;color:#fff}
+.tool span{font-size:13px;color:#CFCAEA}
+@media(max-width:900px){.media{grid-template-columns:1fr}.tools{grid-template-columns:1fr}}
 
-/* 流れ */
-.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:0;list-style:none;padding:0;margin:0;position:relative}
-.flow::before{content:"";position:absolute;top:34px;left:10%;right:10%;height:1px;background:var(--gold);opacity:.6}
-.flow li{text-align:center;padding:0 10px;position:relative}
-.flow .dot{width:68px;height:68px;border-radius:50%;background:var(--bg);border:1px solid var(--gold);margin:0 auto 18px;display:flex;align-items:center;justify-content:center;font-family:var(--en);font-size:24px;color:var(--gold);font-style:italic;position:relative;z-index:1}
-.flow b{display:block;font-family:var(--serif);font-size:17px;letter-spacing:.08em;margin-bottom:4px}
-.flow span{font-size:13px;color:var(--sub);line-height:1.8;display:block}
-@media(max-width:900px){.flow{grid-template-columns:1fr;gap:30px}.flow::before{display:none}}
+/* ===== SHOP（料金） ===== */
+.shop{max-width:780px;margin:0 auto;padding:30px 36px}
+.shop h4{font-family:var(--dot);font-weight:400;font-size:16px;color:var(--gold);margin:22px 0 4px;letter-spacing:.12em}
+.shop h4:first-child{margin-top:0}
+.row{display:flex;align-items:baseline;gap:10px;padding:12px 4px;border-bottom:1px dashed rgba(226,190,106,.3)}
+.row .nm{font-family:var(--serif);font-weight:700;font-size:17px;white-space:nowrap}
+.row .nm small{display:block;font-family:"Zen Kaku Gothic New",sans-serif;font-weight:400;font-size:12px;color:#B9B3D8;letter-spacing:.02em}
+.row .dots{flex:1;border-bottom:2px dotted rgba(255,255,255,.25);transform:translateY(-6px);min-width:20px}
+.row .pr{text-align:right;white-space:nowrap;font-family:var(--serif);font-weight:800;font-size:24px;color:#fff}
+.row .pr span{font-size:13px;font-weight:600;margin-left:3px}
+.row .pr em{display:block;font-style:normal;font-family:"Zen Kaku Gothic New",sans-serif;font-weight:400;font-size:11.5px;color:#B9B3D8}
+.row.free .pr{color:var(--mint)}
+.row.sum{background:rgba(226,190,106,.12);border:1px solid var(--gold2);border-radius:8px;padding:12px 14px;margin-top:8px}
+.row.sum .pr{color:var(--gold)}
+.shop-note{text-align:center;font-size:12.5px;color:#C9C3E6;margin-top:18px}
+@media(max-width:600px){.shop{padding:22px 16px}.row .nm{font-size:15px;white-space:normal}.row .pr{font-size:20px}}
 
-/* FAQ */
-.faq{max-width:800px;margin:0 auto}
-details{border-bottom:1px solid var(--line);padding:22px 4px}
-details:first-child{border-top:1px solid var(--line)}
-summary{font-family:var(--serif);font-weight:600;font-size:16.5px;cursor:pointer;list-style:none;position:relative;padding:0 36px 0 38px;letter-spacing:.06em}
-summary::-webkit-details-marker{display:none}
-summary::before{content:"Q";position:absolute;left:0;top:-4px;font-family:var(--en);font-size:24px;color:var(--gold);font-style:italic}
-summary::after{content:"";position:absolute;right:6px;top:50%;width:12px;height:12px;border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);transform:translateY(-70%) rotate(45deg);transition:transform .3s}
-details[open] summary::after{transform:translateY(-30%) rotate(-135deg)}
-details p{margin:14px 0 0 38px;color:var(--sub);font-size:14.5px}
+/* ===== QUEST MAP（流れ） ===== */
+.map{position:relative;border-radius:12px;overflow:hidden;border:3px solid var(--gold2);box-shadow:0 0 0 3px #fff,0 0 0 5px var(--gold2),0 30px 50px -25px rgba(60,40,10,.5);margin-bottom:40px}
+.map img{width:100%;aspect-ratio:3/2;object-fit:cover}
+.stages{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;list-style:none;padding:0;margin:0;counter-reset:st}
+.stages li{padding:18px 16px 20px;text-align:center}
+.stages .no{font-family:var(--dot);font-size:13px;color:var(--gold2);letter-spacing:.14em}
+.stages .ic{font-size:30px;line-height:1.2;margin:4px 0}
+.stages b{display:block;font-family:var(--serif);font-size:17px;font-weight:800;letter-spacing:.06em}
+.stages span{display:block;font-size:13px;color:var(--sub);line-height:1.75;margin-top:4px}
+.stages li.goal{background:linear-gradient(180deg,#FFF3D2,#F6DFA4)}
+@media(max-width:900px){.stages{grid-template-columns:1fr 1fr}.stages li.goal{grid-column:1/-1}}
 
-/* CTA */
+/* ===== HINT（FAQ） ===== */
+.faq{max-width:820px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
+details.win{padding:0}
+details summary{list-style:none;cursor:pointer;padding:18px 54px 18px 64px;font-family:var(--serif);font-weight:700;font-size:16px;position:relative;letter-spacing:.04em}
+details summary::-webkit-details-marker{display:none}
+details summary::before{content:"?";position:absolute;left:20px;top:50%;transform:translateY(-50%);width:30px;height:30px;border-radius:6px;background:var(--gold2);color:var(--night);font-family:var(--dot);font-size:18px;display:flex;align-items:center;justify-content:center}
+details summary::after{content:"▼";position:absolute;right:22px;top:50%;transform:translateY(-50%);font-size:12px;color:var(--gold);transition:.3s}
+details[open] summary::after{transform:translateY(-50%) rotate(180deg)}
+details p{margin:0;padding:0 26px 20px 64px;color:#D7D2F0;font-size:14.5px}
+
+/* ===== CONTINUE（CTA） ===== */
 .cta{position:relative;padding:150px 0;color:#fff;text-align:center;overflow:hidden}
-.cta .bg{position:absolute;inset:0;background:url(img/cta.jpg) center/cover}
-.cta::after{content:"";position:absolute;inset:0;background:rgba(40,28,20,.58)}
-.cta .wrap{position:relative;z-index:1}
-.cta .en{font-family:var(--en);font-style:italic;color:#F2DDBF;font-size:22px;letter-spacing:.16em}
-.cta h2{font-family:var(--serif);font-weight:600;font-size:clamp(26px,3.8vw,40px);letter-spacing:.12em;margin:10px 0 18px;line-height:1.6}
-.cta p{opacity:.9;margin:0 0 38px}
-.cta .sub{display:block;margin-top:22px;font-size:14px}
-.cta .sub a{color:#fff}
-@media(max-width:900px){.cta .bg{background-attachment:scroll}}
+.cta .bg{position:absolute;inset:0;background:url(img/rpg/cta.jpg) center/cover}
+.cta::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 55%,rgba(17,23,44,.35),rgba(17,23,44,.82))}
+.cta .wrap{position:relative;z-index:2}
+.cta .cont{font-family:var(--en);font-weight:700;font-size:clamp(34px,6vw,64px);letter-spacing:.2em;background:linear-gradient(180deg,#FFF6D6,#E2BE6A 60%,#B8913F);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 3px 10px rgba(0,0,0,.5))}
+.cta h2{font-family:var(--serif);font-weight:800;font-size:clamp(22px,3.4vw,34px);letter-spacing:.1em;margin:6px 0 10px;text-shadow:0 2px 12px rgba(0,0,0,.6)}
+.cta p{opacity:.92;margin:0 0 30px}
+.yesno{display:inline-flex;flex-direction:column;align-items:center;gap:22px;padding:28px 40px}
+.yesno .sub{font-family:var(--dot);font-size:15px;text-decoration:none;color:#E9E4FF}
+.yesno .sub::before{content:"▶ ";color:var(--gold)}
 
-/* 法定表記 */
+/* ===== 法定表記 ===== */
 .legal{font-size:13.5px;padding:90px 0}
-.legal table{width:100%;max-width:860px;margin:0 auto;border-collapse:collapse;background:var(--card)}
-.legal th,.legal td{border-bottom:1px solid var(--line);padding:14px 16px;text-align:left;vertical-align:top}
+.legal table{width:100%;max-width:880px;margin:0 auto;border-collapse:collapse;background:#FFFCF4;border:1px solid var(--parch2)}
+.legal th,.legal td{border-bottom:1px solid var(--parch2);padding:13px 16px;text-align:left;vertical-align:top}
 .legal th{width:30%;font-weight:500;color:var(--sub);white-space:nowrap}
+.note{font-size:12.5px;color:var(--sub);text-align:center;margin-top:18px}
 @media(max-width:600px){.legal th{white-space:normal}}
-footer{background:#2A211B;color:#D9CCBB;text-align:center;padding:56px 16px 40px;font-size:12.5px;letter-spacing:.1em}
-footer .flogo b{display:block;font-family:var(--serif);font-size:22px;color:#fff;letter-spacing:.14em}
-footer .flogo small{font-family:var(--en);font-style:italic;font-size:15px;color:var(--gold)}
-footer nav{margin:24px 0}
-footer nav a{color:#D9CCBB;margin:0 12px;text-decoration:none}
+footer{background:#0B0F1E;color:#BFB8DA;text-align:center;padding:56px 16px 40px;font-size:12.5px;letter-spacing:.1em}
+footer .flogo b{display:block;font-family:var(--serif);font-size:22px;color:#fff;letter-spacing:.1em}
+footer .flogo small{font-family:var(--en);font-size:12px;color:var(--gold);letter-spacing:.3em}
+footer nav a{font-family:inherit;font-size:12.5px;margin:0 10px;color:#BFB8DA}
+footer nav a::before{display:none}
+footer nav{margin:22px 0}
 
 /* スマホ下部固定ボタン */
 .sticky-cta{display:none}
 @media(max-width:760px){
-  .sticky-cta{display:block;position:fixed;left:0;right:0;bottom:0;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(251,247,241,.95);border-top:1px solid var(--line);z-index:40;transform:translateY(110%);transition:transform .4s}
+  .sticky-cta{display:block;position:fixed;left:0;right:0;bottom:0;padding:10px 16px calc(14px + env(safe-area-inset-bottom));background:rgba(17,23,44,.94);border-top:1px solid var(--gold2);z-index:40;transform:translateY(110%);transition:transform .4s}
   .sticky-cta.show{transform:none}
-  .sticky-cta .btn-line{width:100%;padding:13px}
+  .sticky-cta .btn-line{width:100%;padding:12px}
   section{padding:84px 0}
 }
 </style>
@@ -229,9 +270,12 @@ footer nav a{color:#D9CCBB;margin:0 12px;text-decoration:none}
 
 <header id="hd">
   <div class="wrap">
-    <a class="logo" href="#top"><small>結婚相談所</small><b>マリッジクリエイトNeo</b></a>
+    <a class="logo" href="#top">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 2l15 6v11c0 9.5-6.6 16.4-15 19-8.4-2.6-15-9.5-15-19V8z" fill="#1B2340" stroke="#E2BE6A" stroke-width="2"/><path d="M20 29s-8-4.9-8-10.2A4.4 4.4 0 0120 16a4.4 4.4 0 018 2.8C28 24.1 20 29 20 29z" fill="#E8728A"/><path d="M20 7l1.4 3 3.2.3-2.4 2.1.7 3.1L20 13.9l-2.9 1.6.7-3.1-2.4-2.1 3.2-.3z" fill="#F7E3A8"/></svg>
+      <span><small>結婚相談所</small><b>マリッジクリエイトNeo</b></span>
+    </a>
     <nav>
-      <a href="#origin">名前の由来</a><a href="#about">特徴</a><a href="#counselor">カウンセラー</a><a href="#media">発信</a><a href="#price">料金</a><a href="#flow">ご入会の流れ</a><a href="#faq">よくある質問</a>
+      <a href="#story">ものがたり</a><a href="#items">特徴</a><a href="#party">なかま</a><a href="#shop">料金</a><a href="#quest">冒険の流れ</a><a href="#hint">Q&amp;A</a>
     </nav>
     <a class="btn-line small" href="https://lin.ee/t0CD8nW" target="_blank" rel="noopener">LINEで相談</a>
   </div>
@@ -241,197 +285,211 @@ footer nav a{color:#D9CCBB;margin:0 12px;text-decoration:none}
   <!-- ヒーロー -->
   <div class="hero">
     <div class="bg"></div>
+    <div class="spark" id="spark"></div>
     <div class="wrap">
-      <div class="en rv">Marriage Create Neo</div>
-      <h1 class="rv d1">あなたの結婚を、<br>いっしょにつくる。</h1>
-      <div class="badges rv d2"><span>IBJ加盟</span><span>全国オンライン対応</span><span>無料面談あり</span></div>
-      <p class="rv d2">ひとりで抱えがちな婚活を、いっしょに形にしていく場所。<br>マリッジクリエイターが、プロフィール作りからお見合い・交際・成婚まで伴走します。</p>
-      <div class="rv d3">
-        <a class="btn-line" href="https://lin.ee/t0CD8nW" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8-6C21.5 14.2 22 12.7 22 11c0-4.4-4.5-8-10-8z"/></svg>LINEで無料相談する</a>
-        <a class="btn-ghost" href="https://hudetaro.github.io/omiai-dojo/?from=hp" target="_blank" rel="noopener">3分でお見合い力チェック →</a>
+      <div class="stage rv">NEW GAME ─ 婚活の冒険</div>
+      <h1 class="rv d1">あなたの結婚を、<br><em>いっしょにつくる。</em></h1>
+      <div class="badges rv d1"><span>IBJ加盟</span><span>全国オンライン対応</span><span>無料面談あり</span></div>
+      <div class="win talk rv d2">
+        <div class="face"><img src="img/rpg/fuku_sage.png" alt="案内役のフク先生"></div>
+        <div>
+          <div class="who">フク先生</div>
+          <p class="msg" id="msg" data-text="ようこそ、婚活の冒険へ。ひとりで進むには長い道のり。きみの結婚を、いっしょにつくっていこう。"></p>
+          <div class="choices">
+            <a class="go sel" href="https://lin.ee/t0CD8nW" target="_blank" rel="noopener">冒険をはじめる（LINEで無料相談）</a>
+            <a href="https://hudetaro.github.io/omiai-dojo/?from=hp" target="_blank" rel="noopener">まずは練習する（3分 お見合い道場）</a>
+          </div>
+        </div>
       </div>
+      <p class="lead rv d3">マリッジクリエイターが、プロフィール作りからお見合い・交際・ご成婚まで、あなたの冒険に伴走します。</p>
     </div>
-    <div class="scroll">SCROLL</div>
   </div>
 
-  <!-- 名前の由来 -->
-  <section id="origin">
+  <!-- STORY -->
+  <section id="story" class="parch">
     <div class="wrap">
-      <div class="sec-head rv"><span class="en">Concept</span><h2>結婚を、つくる。</h2></div>
-      <div class="origin">
-        <div class="photo rv"><img src="img/studio.jpg" alt="あたたかな光が差し込む机"></div>
+      <div class="sec-head rv"><span class="en">STORY</span><h2>結婚を、つくる。</h2></div>
+      <div class="story">
+        <div class="crest rv">
+          <svg viewBox="0 0 400 400" aria-hidden="true"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F7E3A8"/><stop offset=".5" stop-color="#B8913F"/><stop offset="1" stop-color="#E2BE6A"/></linearGradient></defs><circle cx="200" cy="200" r="190" fill="none" stroke="url(#g)" stroke-width="3"/><circle cx="200" cy="200" r="176" fill="none" stroke="url(#g)" stroke-width="1" stroke-dasharray="2 6"/><circle cx="200" cy="200" r="150" fill="#FFF9EA" stroke="url(#g)" stroke-width="2"/><g fill="#B8913F"><path d="M200 4l6 12-6 6-6-6z"/><path d="M200 396l6-12-6-6-6 6z"/><path d="M4 200l12 6 6-6-6-6z"/><path d="M396 200l-12 6-6-6 6-6z"/></g><text font-family="Cinzel" font-size="13" letter-spacing="6" fill="#B8913F"><textPath href="#c" startOffset="0">✦ CREATE YOUR MARRIAGE TOGETHER ✦ A NEW QUEST BEGINS ✦ MARRIAGE CREATE NEO </textPath></text><path id="c" d="M200 200m-163 0a163 163 0 1 1 326 0a163 163 0 1 1 -326 0" fill="none"/></svg>
+          <div class="in"><b>Marriage<br>Create <em>Neo</em></b><small>マリッジクリエイトNeo</small></div>
+        </div>
         <div class="rv d1">
-          <div class="word">Marriage<br>Create <em style="color:var(--gold)">Neo</em></div>
-          <div class="formula">マリッジ（結婚）＋ クリエイト（つくる）＋ ネオ（新しい）</div>
+          <div class="equation"><span><b>Marriage</b>結婚</span><i>＋</i><span><b>Create</b>つくる</span><i>＋</i><span><b>Neo</b>新しい</span></div>
           <h3>あなたの結婚を、<br>新しいかたちで、いっしょにつくる。</h3>
-          <p>ゲームクリエイターが作品をつくるように、マリッジクリエイトNeoでは<b>マリッジクリエイター</b>が、あなたといっしょに結婚までの道のりをつくります。「Neo」には、ひとりで抱え込む婚活ではない、新しい婚活のかたちを届けたいという思いを込めました。</p>
-          <p>結婚は、お相手を「探す」だけでは決まりません。プロフィールの見せ方、お見合いでの会話、交際中のやりとり。ひとつずつ形にしていくことで、結婚は近づいていきます。</p>
+          <p>ゲームクリエイターが作品をつくるように、マリッジクリエイトNeoでは<b>マリッジクリエイター</b>が、あなたといっしょに結婚までの道のりをつくります。</p>
+          <p>結婚は、お相手を「探す」だけでは決まりません。プロフィールの見せ方、お見合いでの会話、交際中のやりとり。ひとつずつクリアしていくことで、ゴールは近づいていきます。「Neo」には、ひとりで抱え込まない、新しい婚活のかたちを届けたいという思いを込めました。</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 特徴 -->
-  <section id="about" class="bg2">
+  <!-- ITEMS -->
+  <section id="items" class="night">
+    <div class="stars"></div>
     <div class="wrap">
-      <div class="sec-head rv"><span class="en">Features</span><h2>マリッジクリエイトNeoの特徴</h2><p>「何がダメなのか分からない」を、具体的な言葉と行動に変えていきます。</p></div>
-      <div class="features">
-        <div class="feature rv"><div class="ph"><img src="img/together.jpg" alt="ノートを見ながら一緒に相談する様子"></div><div class="no">01</div><h3>いっしょにつくる婚活</h3><p>任せきりにも、放りっぱなしにもしません。プロフィール、お見合い、交際の一つひとつを、相談しながら形にしていきます。</p></div>
-        <div class="feature rv d1"><div class="ph"><img src="img/online.jpg" alt="自宅からオンラインで相談する男性"></div><div class="no">02</div><h3>全国どこでもオンライン</h3><p>面談もサポートもオンラインで完結。お住まいの地域を問わず、ご自宅から婚活を始められます。</p></div>
-        <div class="feature rv d2"><div class="ph"><img src="img/meet.jpg" alt="ホテルのラウンジでのお見合い"></div><div class="no">03</div><h3>IBJのネットワークで出会える</h3><p>IBJ（日本結婚相談所連盟）に加盟。全国の加盟相談所の会員の方とお見合いができます。</p></div>
+      <div class="sec-head rv"><span class="en">ITEMS</span><h2>冒険を助ける、3つの特徴</h2><p>「何がダメなのか分からない」を、具体的な言葉と行動に変えていきます。</p></div>
+      <div class="items">
+        <div class="win item rv"><div class="ic"><img src="img/rpg/item1.jpg" alt=""></div><div class="rare">★★★★★</div><h3>いっしょにつくる婚活</h3><p>任せきりにも、放りっぱなしにもしません。プロフィール、お見合い、交際の一つひとつを、相談しながら形にしていきます。</p><span class="get">▶ 伴走サポートを手に入れた！</span></div>
+        <div class="win item rv d1"><div class="ic"><img src="img/rpg/item2.jpg" alt=""></div><div class="rare">★★★★★</div><h3>全国どこでもオンライン</h3><p>面談もサポートもオンラインで完結。お住まいの地域を問わず、ご自宅から婚活を始められます。</p><span class="get">▶ どこでも面談を手に入れた！</span></div>
+        <div class="win item rv d2"><div class="ic"><img src="img/rpg/item3.jpg" alt=""></div><div class="rare">★★★★★</div><h3>IBJのネットワーク</h3><p>IBJ（日本結婚相談所連盟）に加盟。全国の加盟相談所の会員の方とお見合いができます。</p><span class="get">▶ 全国の出会いを手に入れた！</span></div>
       </div>
     </div>
   </section>
 
-  <!-- カウンセラー -->
-  <section id="counselor">
+  <!-- PARTY -->
+  <section id="party" class="parch">
     <div class="wrap">
-      <div class="sec-head rv"><span class="en">Counselor</span><h2>カウンセラー紹介</h2></div>
-      <div class="cs rv">
+      <div class="sec-head rv"><span class="en">PARTY</span><h2>冒険のなかま</h2><p>案内役のフク先生と、カウンセラー本人がパーティーを組んで、あなたの婚活をサポートします。</p></div>
+      <div class="rv" id="cs">
         <div class="cs-track" id="csTrack">
-          <div class="counselor cs-slide">
-            <div>
-              <div class="owl"><img src="img/fuku_talk.png" alt="案内役のフク先生"></div>
-              <div class="owl-cap">案内役のキャラクター</div>
-            </div>
-            <div>
-              <span class="title-badge">Guide Character</span>
-              <h3>フク先生</h3>
-              <p class="role">YouTube・LINE・ゲームの案内役</p>
-              <p>婚活の悩みにやさしく赤ペンを入れる、ふくろうの先生です。YouTube「フク先生の婚活相談室」や公式LINE、お見合い道場で、婚活のコツをわかりやすくお伝えしています。</p>
-              <p>※フク先生はキャラクターです。実際のカウンセリングは、代表のマリッジクリエイターが担当します。</p>
-              <div class="links">
-                <a href="https://www.youtube.com/channel/UClz9nCXALjZfVts4ga1Dc_Q" target="_blank" rel="noopener">▶ YouTube「フク先生の婚活相談室」</a>
-                <a href="https://note.com/kekkon_fuku" target="_blank" rel="noopener">note 婚活コラム</a>
-                <a href="https://hudetaro.github.io/fuku-shindan/" target="_blank" rel="noopener">30秒 結婚タイプ診断</a>
+          <div class="cs-slide">
+            <div class="win status">
+              <div class="portrait"><span class="tag">GUIDE</span><img src="img/rpg/fuku_sage.png" alt="案内役のフク先生"></div>
+              <div>
+                <h3 class="st-name">フク先生<small>GUIDE</small></h3>
+                <div class="st-job">しょくぎょう：けんじゃ（案内役キャラクター）</div>
+                <div class="bars">
+                  <span>やさしさ</span><div class="bar"><i style="--w:96%"></i></div>
+                  <span>赤ペン力</span><div class="bar mp"><i style="--w:90%"></i></div>
+                  <span>ものしり</span><div class="bar lv"><i style="--w:84%"></i></div>
+                </div>
+                <div class="skills"><span>LINE添削</span><span>婚活クイズ</span><span>お見合い道場</span></div>
+                <p>婚活の悩みにやさしく赤ペンを入れる、ふくろうの先生です。YouTube「フク先生の婚活相談室」や公式LINE、お見合い道場で、婚活のコツをわかりやすくお伝えしています。</p>
+                <p style="font-size:13px;color:#B9B3D8">※フク先生はキャラクターです。実際のカウンセリングは、代表のマリッジクリエイターが担当します。</p>
+                <div class="links">
+                  <a href="https://www.youtube.com/channel/UClz9nCXALjZfVts4ga1Dc_Q" target="_blank" rel="noopener">▶ YouTube</a>
+                  <a href="https://note.com/kekkon_fuku" target="_blank" rel="noopener">note 婚活コラム</a>
+                  <a href="https://hudetaro.github.io/fuku-shindan/" target="_blank" rel="noopener">30秒 結婚タイプ診断</a>
+                </div>
               </div>
             </div>
           </div>
-          <div class="counselor cs-slide">
-            <div>
-              <div class="owl person"><svg class="sil" viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="74" r="38"/><path d="M28 196c4-52 34-80 72-80s68 28 72 80z"/></svg></div>
-              <div class="owl-cap">カウンセラー本人</div>
-            </div>
-            <div>
-              <span class="title-badge">Marriage Creator</span>
-              <h3>加地 雄希<small class="roma">YUKI KAJI</small></h3>
-              <p class="role">マリッジクリエイター／結婚相談所マリッジクリエイトNeo 代表</p>
-              <p>ふだんはゲーム制作やYouTubeなど、ものづくりの仕事をしています。「つくる」ことが好きな自分だからこそ、婚活も、あなたといっしょにつくっていきたいと考えています。</p>
-              <p><span class="tbd">【ここにご本人の婚活経験・この仕事を始めた理由などを入れます】</span></p>
-              <p>うまくいかない婚活には、必ず理由があります。責めるのではなく、「どうすれば伝わるか」をいっしょに考える。それがマリッジクリエイトNeoのスタイルです。</p>
-              <p class="cs-hint">実際の面談・サポートは、このカウンセラーが担当します。</p>
+          <div class="cs-slide">
+            <div class="win status">
+              <div class="portrait"><span class="tag">COUNSELOR</span><svg class="sil" viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="78" r="40"/><path d="M22 200c4-56 36-84 78-84s74 28 78 84z"/></svg></div>
+              <div>
+                <h3 class="st-name">加地 雄希<small>YUKI KAJI</small></h3>
+                <div class="st-job">しょくぎょう：マリッジクリエイター（結婚相談所マリッジクリエイトNeo 代表）</div>
+                <div class="bars">
+                  <span>きく力</span><div class="bar"><i style="--w:92%"></i></div>
+                  <span>つくる力</span><div class="bar mp"><i style="--w:95%"></i></div>
+                  <span>伴走力</span><div class="bar lv"><i style="--w:90%"></i></div>
+                </div>
+                <div class="skills"><span>プロフィール作り</span><span>お見合い対策</span><span>交際サポート</span></div>
+                <p>ふだんはゲーム制作やYouTubeなど、ものづくりの仕事をしています。「つくる」ことが好きな自分だからこそ、婚活も、あなたといっしょにつくっていきたいと考えています。</p>
+                <p><span class="tbd">【ここにご本人の婚活経験・この仕事を始めた理由などを入れます】</span></p>
+                <p>うまくいかない婚活には、必ず理由があります。責めるのではなく、「どうすれば伝わるか」をいっしょに考える。それがマリッジクリエイトNeoのスタイルです。</p>
+              </div>
             </div>
           </div>
         </div>
         <div class="cs-nav">
-          <button type="button" class="cs-btn" data-d="-1" aria-label="前へ">‹</button>
+          <button type="button" class="cs-btn" data-d="-1">◀ まえへ</button>
           <span class="cs-dots" id="csDots"><i class="on"></i><i></i></span>
-          <button type="button" class="cs-btn" data-d="1" aria-label="次へ">›</button>
+          <button type="button" class="cs-btn" data-d="1">つぎへ ▶</button>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 発信（YouTube・note） -->
-  <section id="media" class="bg2">
+  <!-- LIBRARY -->
+  <section id="library" class="parch" style="padding-top:0">
     <div class="wrap">
-      <div class="sec-head rv"><span class="en">Media</span><h2>婚活のヒントを発信しています</h2><p>YouTubeとnoteで、お見合い・交際・婚活LINEのコツを毎日お届けしています。入会前の情報収集にもどうぞ。</p></div>
+      <div class="sec-head rv"><span class="en">LIBRARY</span><h2>婚活のヒントを発信しています</h2><p>YouTubeとnoteで、お見合い・交際・婚活LINEのコツを毎日お届けしています。入会前の情報収集にもどうぞ。</p></div>
       <div class="media">
         <div class="rv">
-          <h3><span class="ic">YouTube</span>フク先生の婚活相談室</h3>
-          <div class="yt"><iframe src="https://www.youtube.com/embed/videoseries?list=UUlz9nCXALjZfVts4ga1Dc_Q" title="フク先生の婚活相談室 最新の動画" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-          <a class="more" href="https://www.youtube.com/channel/UClz9nCXALjZfVts4ga1Dc_Q" target="_blank" rel="noopener">YouTubeチャンネルを見る →</a>
+          <h3><b>▶ YouTube</b>フク先生の婚活相談室</h3>
+          <div class="yt"><iframe src="https://www.youtube.com/embed/videoseries?list=UUlz9nCXALjZfVts4ga1Dc_Q" title="フク先生の婚活相談室 最新の動画" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+          <a class="more" href="https://www.youtube.com/channel/UClz9nCXALjZfVts4ga1Dc_Q" target="_blank" rel="noopener">YouTubeチャンネルを見る</a>
         </div>
         <div class="rv d1">
-          <h3><span class="ic">note</span>婚活コラム（新着）</h3>
+          <h3><b>▶ note</b>婚活コラム（新着）</h3>
           <div class="notes">
-            <a class="ncard" href="https://note.com/kekkon_fuku/n/n30c4bc3fb62e" target="_blank" rel="noopener"><img src="https://assets.st-note.com/production/uploads/images/335449647/rectangle_large_type_2_22cd4d6edeadff3ef0fb60fed53a0ace.png?width=400" alt=""><div><b>結婚相談所に入ったことは親や友人に話すべき？話すメリット3つと、話すときの注意点</b><small>2026.11.26</small></div></a>
-            <a class="ncard" href="https://note.com/kekkon_fuku/n/n3ae7968601af" target="_blank" rel="noopener"><img src="https://assets.st-note.com/production/uploads/images/335449445/rectangle_large_type_2_e1a8f89693b2e25351fbfacbb763a24d.png?width=400" alt=""><div><b>仮交際のデートで会話が盛り上がらないのはなぜ？原因3つと、話題を広げるコツ4つ</b><small>2026.11.25</small></div></a>
-            <a class="ncard" href="https://note.com/kekkon_fuku/n/naecdef6d37e3" target="_blank" rel="noopener"><img src="https://assets.st-note.com/production/uploads/images/335449199/rectangle_large_type_2_42712dcc2999ddefc40a138d469ff52c.png?width=400" alt=""><div><b>婚活LINEで仕事の愚痴やネガティブな話はしていい？印象が下がる書き方3つと、やわらかい言いかえ例</b><small>2026.11.25</small></div></a>
+            <a class="win light ncard" href="https://note.com/kekkon_fuku/n/n30c4bc3fb62e" target="_blank" rel="noopener"><img src="https://assets.st-note.com/production/uploads/images/335449647/rectangle_large_type_2_22cd4d6edeadff3ef0fb60fed53a0ace.png?width=400" alt=""><div><b>結婚相談所に入ったことは親や友人に話すべき？話すメリット3つと、話すときの注意点</b><small>2026.11.26</small></div></a>
+            <a class="win light ncard" href="https://note.com/kekkon_fuku/n/n3ae7968601af" target="_blank" rel="noopener"><img src="https://assets.st-note.com/production/uploads/images/335449445/rectangle_large_type_2_e1a8f89693b2e25351fbfacbb763a24d.png?width=400" alt=""><div><b>仮交際のデートで会話が盛り上がらないのはなぜ？原因3つと、話題を広げるコツ4つ</b><small>2026.11.25</small></div></a>
+            <a class="win light ncard" href="https://note.com/kekkon_fuku/n/naecdef6d37e3" target="_blank" rel="noopener"><img src="https://assets.st-note.com/production/uploads/images/335449199/rectangle_large_type_2_42712dcc2999ddefc40a138d469ff52c.png?width=400" alt=""><div><b>婚活LINEで仕事の愚痴やネガティブな話はしていい？印象が下がる書き方3つと、やわらかい言いかえ例</b><small>2026.11.25</small></div></a>
           </div>
-          <a class="more" href="https://note.com/kekkon_fuku" target="_blank" rel="noopener">noteの記事一覧を見る →</a>
+          <a class="more" href="https://note.com/kekkon_fuku" target="_blank" rel="noopener">noteの記事一覧を見る</a>
         </div>
       </div>
       <div class="tools">
-        <a class="tool rv" href="https://hudetaro.github.io/omiai-dojo/?from=hp" target="_blank" rel="noopener"><img src="img/fuku_happy.png" alt=""><div><b>フク先生のお見合い道場</b><span>3分でできる、お見合いの会話体験ゲーム（無料）</span></div></a>
-        <a class="tool rv d1" href="https://hudetaro.github.io/fuku-shindan/" target="_blank" rel="noopener"><img src="img/fuku_normal.png" alt=""><div><b>30秒 結婚タイプ診断</b><span>あなたに合う婚活の進め方がわかる（無料）</span></div></a>
+        <a class="win tool rv" href="https://hudetaro.github.io/omiai-dojo/?from=hp" target="_blank" rel="noopener"><img src="img/fuku_happy.png" alt=""><div><span class="mini">MINI GAME</span><b>フク先生のお見合い道場</b><span>3分でできる、お見合いの会話体験ゲーム（無料）</span></div></a>
+        <a class="win tool rv d1" href="https://hudetaro.github.io/fuku-shindan/" target="_blank" rel="noopener"><img src="img/fuku_normal.png" alt=""><div><span class="mini">MINI GAME</span><b>30秒 結婚タイプ診断</b><span>あなたに合う婚活の進め方がわかる（無料）</span></div></a>
       </div>
     </div>
   </section>
 
-  <!-- 料金 -->
-  <section id="price">
+  <!-- SHOP -->
+  <section id="shop" class="night">
+    <div class="stars"></div>
     <div class="wrap">
-      <div class="sec-head rv"><span class="en">Price</span><h2>料金プラン</h2><p>くわしい内容は、無料面談でご説明します。</p></div>
-      <div class="price rv">
-        <h4>初期費用</h4>
-        <dl>
-          <dt>入会金<small>相談所に入会し、活動を始めるための費用</small></dt><dd>55,000<span>円</span><em>税抜 50,000円</em></dd>
-          <dt>登録料<small>会員情報・プロフィールのシステム登録費用</small></dt><dd>33,000<span>円</span><em>税抜 30,000円</em></dd>
-          <dt>活動サポート費</dt><dd>0<span>円</span></dd>
-          <dt class="sum">初期費用 合計</dt><dd class="sum">88,000<span>円</span><em>税抜 80,000円</em></dd>
-        </dl>
-        <h4>活動中の費用</h4>
-        <dl>
-          <dt>月会費<small>活動の継続・定期フォロー・活動相談</small></dt><dd>11,000<span>円／月</span><em>税抜 10,000円</em></dd>
-          <dt>お見合い料<small>お見合いの日程調整・実施後の振り返り</small></dt><dd>0<span>円</span></dd>
-        </dl>
-        <h4>ご成婚時</h4>
-        <dl>
-          <dt>成婚料<small>ご成婚に至った際の成功報酬</small></dt><dd>220,000<span>円</span><em>税抜 200,000円</em></dd>
-        </dl>
+      <div class="sec-head rv"><span class="en">SHOP</span><h2>料金プラン</h2><p>くわしい内容は、無料面談でご説明します。</p></div>
+      <div class="win shop rv">
+        <h4>◆ 初期費用</h4>
+        <div class="row"><div class="nm">入会金<small>相談所に入会し、活動を始めるための費用</small></div><div class="dots"></div><div class="pr">55,000<span>円</span><em>税抜 50,000円</em></div></div>
+        <div class="row"><div class="nm">登録料<small>会員情報・プロフィールのシステム登録費用</small></div><div class="dots"></div><div class="pr">33,000<span>円</span><em>税抜 30,000円</em></div></div>
+        <div class="row free"><div class="nm">活動サポート費</div><div class="dots"></div><div class="pr">0<span>円</span></div></div>
+        <div class="row sum"><div class="nm">初期費用 合計</div><div class="dots"></div><div class="pr">88,000<span>円</span><em>税抜 80,000円</em></div></div>
+        <h4>◆ 活動中の費用</h4>
+        <div class="row"><div class="nm">月会費<small>活動の継続・定期フォロー・活動相談</small></div><div class="dots"></div><div class="pr">11,000<span>円／月</span><em>税抜 10,000円</em></div></div>
+        <div class="row free"><div class="nm">お見合い料<small>お見合いの日程調整・実施後の振り返り</small></div><div class="dots"></div><div class="pr">0<span>円</span></div></div>
+        <h4>◆ ご成婚時</h4>
+        <div class="row"><div class="nm">成婚料<small>ご成婚に至った際の成功報酬</small></div><div class="dots"></div><div class="pr">220,000<span>円</span><em>税抜 200,000円</em></div></div>
       </div>
-      <p class="note">※表示価格は税込（消費税10%）です。小さい文字は税抜の金額です。</p>
+      <p class="shop-note">※表示価格は税込（消費税10%）です。小さい文字は税抜の金額です。</p>
     </div>
   </section>
 
-  <!-- 流れ -->
-  <section id="flow" class="bg2">
+  <!-- QUEST MAP -->
+  <section id="quest" class="parch">
     <div class="wrap">
-      <div class="sec-head rv"><span class="en">Flow</span><h2>ご入会までの流れ</h2><p>まずはLINEから、気軽にご相談ください。</p></div>
-      <ol class="flow rv">
-        <li><div class="dot">1</div><b>LINE登録</b><span>友だち追加して<br>無料面談を予約</span></li>
-        <li><div class="dot">2</div><b>無料面談</b><span>オンラインで<br>お話を伺います（約60分）</span></li>
-        <li><div class="dot">3</div><b>ご入会</b><span>必要書類を<br>ご提出いただきます</span></li>
-        <li><div class="dot">4</div><b>活動スタート</b><span>プロフィール作成<br>お見合い</span></li>
-        <li><div class="dot">5</div><b>ご成婚</b><span>交際から成婚まで<br>伴走します</span></li>
+      <div class="sec-head rv"><span class="en">QUEST MAP</span><h2>ご成婚までの冒険</h2><p>まずはLINEから、気軽にご相談ください。</p></div>
+      <div class="map rv"><img src="img/rpg/map.jpg" alt="ご成婚までの道のりを描いた冒険の地図"></div>
+      <ol class="stages">
+        <li class="win light rv"><div class="no">STAGE 1</div><div class="ic">📜</div><b>LINE登録</b><span>友だち追加して<br>無料面談を予約</span></li>
+        <li class="win light rv d1"><div class="no">STAGE 2</div><div class="ic">🗺️</div><b>無料面談</b><span>オンラインで<br>お話を伺います（約60分）</span></li>
+        <li class="win light rv d2"><div class="no">STAGE 3</div><div class="ic">🛡️</div><b>ご入会</b><span>必要書類を<br>ご提出いただきます</span></li>
+        <li class="win light rv d3"><div class="no">STAGE 4</div><div class="ic">⚔️</div><b>活動スタート</b><span>プロフィール作成<br>お見合い</span></li>
+        <li class="win light goal rv d3"><div class="no">GOAL</div><div class="ic">💍</div><b>ご成婚</b><span>交際から成婚まで<br>伴走します</span></li>
       </ol>
     </div>
   </section>
 
-  <!-- FAQ -->
-  <section id="faq">
+  <!-- HINT -->
+  <section id="hint" class="night">
+    <div class="stars"></div>
     <div class="wrap">
-      <div class="sec-head rv"><span class="en">Q&amp;A</span><h2>よくある質問</h2></div>
+      <div class="sec-head rv"><span class="en">HINT</span><h2>よくある質問</h2></div>
       <div class="faq rv">
-        <details><summary>住んでいる地域が遠くても入会できますか？</summary><p>はい。面談・サポートはすべてオンラインで行うため、全国どこからでもご入会いただけます。お見合いは、お相手とご都合のよい場所で行います。</p></details>
-        <details><summary>無料面談では何をしますか？</summary><p>これまでの婚活のお話や、ご希望のお相手像を伺い、活動の進め方と料金をご説明します。その場で入会を決める必要はありません。</p></details>
-        <details><summary>入会に必要な書類は？</summary><p>IBJの規定にもとづき、本人確認書類・独身証明書・収入証明書（男性は必須）・最終学歴の証明書などが必要です。詳しくは面談でご案内します。</p></details>
-        <details><summary>婚活が初めてでも大丈夫ですか？</summary><p>もちろんです。プロフィール写真の準備から、お見合いでの会話、交際中のやりとりまで、一つずつサポートします。</p></details>
-        <details><summary>「フク先生」とは誰ですか？</summary><p>YouTubeやLINEで案内役をしている、ふくろうのキャラクターです。実際のカウンセリングは、代表のマリッジクリエイターが担当します。</p></details>
-        <details><summary>動画のお話は実話ですか？</summary><p>YouTubeなどの相談者・事例は、よくある婚活の悩みをもとにした創作です。実在の会員様の事例ではありません。</p></details>
+        <details class="win"><summary>住んでいる地域が遠くても入会できますか？</summary><p>はい。面談・サポートはすべてオンラインで行うため、全国どこからでもご入会いただけます。お見合いは、お相手とご都合のよい場所で行います。</p></details>
+        <details class="win"><summary>無料面談では何をしますか？</summary><p>これまでの婚活のお話や、ご希望のお相手像を伺い、活動の進め方と料金をご説明します。その場で入会を決める必要はありません。</p></details>
+        <details class="win"><summary>入会に必要な書類は？</summary><p>IBJの規定にもとづき、本人確認書類・独身証明書・収入証明書（男性は必須）・最終学歴の証明書などが必要です。詳しくは面談でご案内します。</p></details>
+        <details class="win"><summary>婚活が初めてでも大丈夫ですか？</summary><p>もちろんです。プロフィール写真の準備から、お見合いでの会話、交際中のやりとりまで、一つずつサポートします。</p></details>
+        <details class="win"><summary>「フク先生」とは誰ですか？</summary><p>YouTubeやLINEで案内役をしている、ふくろうのキャラクターです。実際のカウンセリングは、代表のマリッジクリエイター（加地 雄希）が担当します。</p></details>
+        <details class="win"><summary>動画のお話は実話ですか？</summary><p>YouTubeなどの相談者・事例は、よくある婚活の悩みをもとにした創作です。実在の会員様の事例ではありません。</p></details>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
+  <!-- CONTINUE -->
   <div class="cta">
     <div class="bg"></div>
     <div class="wrap">
-      <div class="en rv">Let's create together</div>
-      <h2 class="rv d1">まずは、話してみることから。</h2>
+      <div class="cont rv">CONTINUE?</div>
+      <h2 class="rv d1">冒険を、はじめますか？</h2>
       <p class="rv d1">無理な勧誘は一切しません。婚活のお悩み相談だけでも大歓迎です。</p>
-      <div class="rv d2">
-        <a class="btn-line" href="https://lin.ee/t0CD8nW" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8-6C21.5 14.2 22 12.7 22 11c0-4.4-4.5-8-10-8z"/></svg>LINEで無料相談する</a>
-        <span class="sub"><a href="https://hudetaro.github.io/omiai-dojo/?from=hp" target="_blank" rel="noopener">まずは3分でお見合い力チェック（無料）</a></span>
+      <div class="win yesno rv d2">
+        <a class="btn-line" href="https://lin.ee/t0CD8nW" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8-6C21.5 14.2 22 12.7 22 11c0-4.4-4.5-8-10-8z"/></svg>はい（LINEで無料相談する）</a>
+        <a class="sub" href="https://hudetaro.github.io/omiai-dojo/?from=hp" target="_blank" rel="noopener">まずは3分でお見合い力チェック（無料）</a>
       </div>
     </div>
   </div>
 
   <!-- 運営情報・法定表記 -->
-  <section id="legal" class="legal">
+  <section id="legal" class="legal parch">
     <div class="wrap">
-      <div class="sec-head" style="margin-bottom:36px"><span class="en">Information</span><h2 style="font-size:22px">運営者情報・特定商取引法に基づく表記</h2></div>
+      <div class="sec-head" style="margin-bottom:36px"><span class="en">INFORMATION</span><h2 style="font-size:22px">運営者情報・特定商取引法に基づく表記</h2></div>
       <table>
         <tr><th>相談所名</th><td>結婚相談所 マリッジクリエイトNeo（Marriage Create Neo）</td></tr>
         <tr><th>代表者</th><td>加地 雄希</td></tr>
@@ -447,13 +505,13 @@ footer nav a{color:#D9CCBB;margin:0 12px;text-decoration:none}
         <tr><th>クーリング・オフ</th><td>契約書面を受け取った日から8日以内であれば、書面または電磁的記録により無条件で契約を解除できます。</td></tr>
         <tr><th>中途解約</th><td>クーリング・オフ期間経過後も、特定商取引法の定める範囲で中途解約ができます。解約料は法令の上限を超えません。<span class="tbd">【詳細は規約で定めます】</span></td></tr>
       </table>
-      <p class="note">※サイト内の写真はイメージです。</p>
+      <p class="note">※サイト内のイラストはイメージです。</p>
     </div>
   </section>
 </main>
 
 <footer>
-  <div class="flogo"><small>Marriage Create Neo</small><b>マリッジクリエイトNeo</b></div>
+  <div class="flogo"><small>MARRIAGE CREATE NEO</small><b>マリッジクリエイトNeo</b></div>
   <nav>
     <a href="#legal">特定商取引法に基づく表記</a>
     <a href="#">プライバシーポリシー</a>
@@ -472,8 +530,18 @@ addEventListener('scroll',onScroll,{passive:true});onScroll();
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.15});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 
+/* 光の粒 */
+const sp=document.getElementById('spark');
+for(let i=0;i<26;i++){const e=document.createElement('i');e.style.left=Math.random()*100+'%';e.style.animationDuration=(8+Math.random()*10)+'s';e.style.animationDelay=(-Math.random()*14)+'s';const s=2+Math.random()*4;e.style.width=e.style.height=s+'px';sp.appendChild(e)}
+
+/* メッセージを1文字ずつ表示 */
+const msg=document.getElementById('msg'),txt=msg.dataset.text;let k=0;
+const type=()=>{msg.innerHTML=txt.slice(0,k)+(k<txt.length?'<span class="cursor">▌</span>':' <span class="tri">▼</span>');if(k++<txt.length)setTimeout(type,55)};
+setTimeout(type,900);
+
+/* なかま（横スクロール） */
 const csT=document.getElementById('csTrack'),csD=[...document.querySelectorAll('#csDots i')];
-if(csT){const sl=[...csT.children];const cur=()=>{let b=0,m=1e9;sl.forEach((e,j)=>{const d=Math.abs(e.offsetLeft-csT.offsetLeft-csT.scrollLeft);if(d<m){m=d;b=j}});return b};
+if(csT){const sl=[...csT.children];const cur=()=>{let b=0,m=1e9;sl.forEach((e,j)=>{const d=Math.abs(e.offsetLeft-sl[0].offsetLeft-csT.scrollLeft);if(d<m){m=d;b=j}});return b};
 const go=d=>{const i=Math.max(0,Math.min(sl.length-1,cur()+d));csT.scrollTo({left:sl[i].offsetLeft-sl[0].offsetLeft,behavior:'smooth'})};
 document.querySelectorAll('.cs-btn').forEach(b=>b.onclick=()=>go(+b.dataset.d));
 csT.addEventListener('scroll',()=>{const i=cur();csD.forEach((e,j)=>e.classList.toggle('on',i===j))},{passive:true});}
