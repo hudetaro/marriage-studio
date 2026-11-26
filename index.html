@@ -45,6 +45,22 @@ a{color:inherit}
 .rv.on{opacity:1;transform:none}
 .rv.d1{transition-delay:.15s}.rv.d2{transition-delay:.3s}.rv.d3{transition-delay:.45s}
 
+
+/* ===== ロード画面 ===== */
+#loader{position:fixed;inset:0;z-index:999;background:radial-gradient(ellipse at 50% 40%,#24305E,#0B0F1E 70%);display:flex;flex-direction:column;align-items:center;justify-content:center;color:#EDEAFF;transition:opacity .6s,visibility .6s}
+#loader.done{opacity:0;visibility:hidden}
+#loader .walk{width:120px;height:120px;animation:hop .5s ease-in-out infinite alternate}
+#loader .walk img{width:100%;height:100%;object-fit:cover;border-radius:50%;box-shadow:0 0 0 3px #fff,0 0 0 6px var(--gold2),0 10px 24px #0009}
+@keyframes hop{to{transform:translateY(-10px) rotate(3deg)}}
+#loader .nl{font-family:var(--dot);letter-spacing:.3em;font-size:18px;margin:18px 0 12px}
+#loader .nl span{animation:blink 1s steps(1) infinite}
+#loader .gauge{width:min(320px,70vw);height:14px;border:2px solid #fff;border-radius:4px;padding:2px;box-shadow:0 0 0 2px var(--gold2)}
+#loader .gauge i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--mint),#BFF7E5);transition:width .25s}
+#loader .pct{font-family:var(--dot);font-size:13px;color:var(--gold);margin-top:8px}
+#loader .tips{max-width:min(520px,86vw);margin-top:30px;padding:14px 18px;font-family:var(--dot);font-size:14px;line-height:1.8;border:2px solid #ffffff55;border-radius:8px;background:#ffffff0d}
+#loader .tips b{color:var(--gold);font-weight:400;margin-right:8px}
+#loader .skip{position:absolute;right:18px;bottom:16px;font-family:var(--dot);font-size:12px;color:#ffffff99;background:none;border:0;cursor:pointer}
+
 /* ===== ヘッダー ===== */
 header{position:fixed;top:0;left:0;right:0;z-index:30;transition:background .4s,box-shadow .4s}
 header.solid{background:rgba(17,23,44,.92);backdrop-filter:blur(10px);box-shadow:0 1px 0 rgba(226,190,106,.35)}
@@ -290,6 +306,14 @@ footer nav{margin:22px 0}
 </style>
 </head>
 <body>
+<div id="loader" aria-hidden="true">
+  <div class="walk"><img src="img/rpg/fuku_sage.png" alt=""></div>
+  <div class="nl">NOW LOADING<span>...</span></div>
+  <div class="gauge"><i id="ldBar"></i></div>
+  <div class="pct" id="ldPct">0%</div>
+  <div class="tips"><b>TIPS</b><span id="ldTip"></span></div>
+  <button class="skip" type="button" id="ldSkip">SKIP ▶</button>
+</div>
 
 <header id="hd">
   <div class="wrap">
@@ -600,6 +624,18 @@ csT.addEventListener('scroll',()=>{const i=cur();csD.forEach((e,j)=>e.classList.
 fetch('notes.json',{cache:'no-cache'}).then(r=>r.ok?r.json():null).then(a=>{if(!a||!a.length)return;
 const esc=t=>t.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 document.getElementById('notes').innerHTML=a.map(n=>`<a class="win light ncard" href="${esc(n.url)}" target="_blank" rel="noopener"><img src="${esc(n.thumb)}" alt=""><div><b>${esc(n.title)}</b><small>${esc(n.date)}</small></div></a>`).join('')}).catch(()=>{});
+
+/* ロード画面（初回だけ） */
+(()=>{const L=document.getElementById('loader');if(!L)return;
+const tips=['お見合いの最初の10分は「相手の話を聞く」が最強の装備。','プロフィール写真は、笑顔の1枚で印象が大きく変わります。','仮交際中のLINEは、質問で終わらせると返事がきやすくなります。','お見合い後のお返事は、翌日13時までが基本ルール。','「条件」より「一緒にいて楽か」を大切にすると、成婚が近づきます。','うまくいかない婚活には、必ず理由があります。いっしょに見つけましょう。'];
+document.getElementById('ldTip').textContent=tips[Math.floor(Math.random()*tips.length)];
+const fin=()=>{L.classList.add('done');sessionStorage.setItem('ldSeen','1')};
+if(sessionStorage.getItem('ldSeen')){L.style.display='none';return}
+const bar=document.getElementById('ldBar'),pct=document.getElementById('ldPct');let v=0,loaded=false;
+addEventListener('load',()=>loaded=true);
+const t=setInterval(()=>{v=Math.min(loaded?100:92,v+(loaded?12:Math.random()*9+3));bar.style.width=v+'%';pct.textContent=Math.floor(v)+'%';if(v>=100){clearInterval(t);setTimeout(fin,350)}},120);
+setTimeout(()=>{loaded=true},4000);
+document.getElementById('ldSkip').onclick=()=>{clearInterval(t);fin()};})();
 </script>
 </body>
 </html>
