@@ -111,6 +111,28 @@ section{padding:120px 0;position:relative}
 .links a:hover{border-color:var(--accent);color:var(--accent)}
 @media(max-width:900px){.counselor{grid-template-columns:1fr;padding:36px 24px;text-align:center}.counselor .owl{width:220px;height:220px;margin:0 auto}.links{justify-content:center}}
 
+/* 発信（YouTube・note） */
+.media{display:grid;grid-template-columns:1.25fr 1fr;gap:48px;align-items:start}
+.media h3{font-family:var(--serif);font-size:19px;font-weight:600;letter-spacing:.08em;margin:0 0 16px;display:flex;align-items:center;gap:10px}
+.media h3 .ic{font-family:var(--en);font-style:italic;color:var(--gold);font-size:18px}
+.yt{position:relative;aspect-ratio:16/9;border-radius:6px;overflow:hidden;background:#000;box-shadow:0 30px 60px -30px rgba(80,50,30,.35)}
+.yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.more{display:inline-block;margin-top:16px;font-size:13.5px;letter-spacing:.1em;text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:2px}
+.more:hover{color:var(--accent)}
+.notes{display:flex;flex-direction:column;gap:14px}
+.ncard{display:grid;grid-template-columns:132px 1fr;gap:16px;align-items:center;background:var(--card);border-radius:6px;padding:12px;text-decoration:none;box-shadow:0 14px 30px -22px rgba(80,50,30,.35);transition:transform .3s}
+.ncard:hover{transform:translateY(-3px)}
+.ncard img{width:132px;aspect-ratio:1.91/1;object-fit:cover;border-radius:4px}
+.ncard b{font-weight:500;font-size:14px;line-height:1.7;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.ncard small{display:block;color:var(--sub);font-size:11.5px;margin-top:4px}
+.tools{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:56px}
+.tool{display:flex;gap:18px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:6px;padding:22px 24px;text-decoration:none;transition:border-color .3s,transform .3s}
+.tool:hover{border-color:var(--gold);transform:translateY(-3px)}
+.tool img{width:64px;height:64px;flex:none}
+.tool b{display:block;font-family:var(--serif);font-size:17px;letter-spacing:.06em}
+.tool span{font-size:13px;color:var(--sub)}
+@media(max-width:900px){.media{grid-template-columns:1fr;gap:56px}.tools{grid-template-columns:1fr}}
+
 /* 料金 */
 .price{max-width:760px;margin:0 auto;background:var(--card);border-radius:6px;padding:16px 44px;box-shadow:0 30px 60px -30px rgba(80,50,30,.15)}
 .price dl{display:grid;grid-template-columns:1fr auto;margin:0}
@@ -180,7 +202,7 @@ footer nav a{color:#D9CCBB;margin:0 12px;text-decoration:none}
   <div class="wrap">
     <a class="logo" href="#top"><small>結婚相談所</small><b>マリッジスタジオ</b></a>
     <nav>
-      <a href="#origin">名前の由来</a><a href="#about">特徴</a><a href="#counselor">カウンセラー</a><a href="#price">料金</a><a href="#flow">ご入会の流れ</a><a href="#faq">よくある質問</a>
+      <a href="#origin">名前の由来</a><a href="#about">特徴</a><a href="#counselor">カウンセラー</a><a href="#media">発信</a><a href="#price">料金</a><a href="#flow">ご入会の流れ</a><a href="#faq">よくある質問</a>
     </nav>
     <a class="btn-line small" href="https://lin.ee/t0CD8nW" target="_blank" rel="noopener">LINEで相談</a>
   </div>
@@ -258,8 +280,35 @@ footer nav a{color:#D9CCBB;margin:0 12px;text-decoration:none}
     </div>
   </section>
 
+  <!-- 発信（YouTube・note） -->
+  <section id="media" class="bg2">
+    <div class="wrap">
+      <div class="sec-head rv"><span class="en">Media</span><h2>婚活のヒントを発信しています</h2><p>YouTubeとnoteで、お見合い・交際・婚活LINEのコツを毎日お届けしています。入会前の情報収集にもどうぞ。</p></div>
+      <div class="media">
+        <div class="rv">
+          <h3><span class="ic">YouTube</span>フク先生の婚活相談室</h3>
+          <div class="yt"><iframe src="https://www.youtube.com/embed/videoseries?list=UUlz9nCXALjZfVts4ga1Dc_Q" title="フク先生の婚活相談室 最新の動画" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+          <a class="more" href="https://www.youtube.com/channel/UClz9nCXALjZfVts4ga1Dc_Q" target="_blank" rel="noopener">YouTubeチャンネルを見る →</a>
+        </div>
+        <div class="rv d1">
+          <h3><span class="ic">note</span>婚活コラム（新着）</h3>
+          <div class="notes">
+            <a class="ncard" href="https://note.com/kekkon_fuku/n/n30c4bc3fb62e" target="_blank" rel="noopener"><img src="https://assets.st-note.com/production/uploads/images/335449647/rectangle_large_type_2_22cd4d6edeadff3ef0fb60fed53a0ace.png?width=400" alt=""><div><b>結婚相談所に入ったことは親や友人に話すべき？話すメリット3つと、話すときの注意点</b><small>2026.11.26</small></div></a>
+            <a class="ncard" href="https://note.com/kekkon_fuku/n/n3ae7968601af" target="_blank" rel="noopener"><img src="https://assets.st-note.com/production/uploads/images/335449445/rectangle_large_type_2_e1a8f89693b2e25351fbfacbb763a24d.png?width=400" alt=""><div><b>仮交際のデートで会話が盛り上がらないのはなぜ？原因3つと、話題を広げるコツ4つ</b><small>2026.11.25</small></div></a>
+            <a class="ncard" href="https://note.com/kekkon_fuku/n/naecdef6d37e3" target="_blank" rel="noopener"><img src="https://assets.st-note.com/production/uploads/images/335449199/rectangle_large_type_2_42712dcc2999ddefc40a138d469ff52c.png?width=400" alt=""><div><b>婚活LINEで仕事の愚痴やネガティブな話はしていい？印象が下がる書き方3つと、やわらかい言いかえ例</b><small>2026.11.25</small></div></a>
+          </div>
+          <a class="more" href="https://note.com/kekkon_fuku" target="_blank" rel="noopener">noteの記事一覧を見る →</a>
+        </div>
+      </div>
+      <div class="tools">
+        <a class="tool rv" href="https://hudetaro.github.io/omiai-dojo/?from=hp" target="_blank" rel="noopener"><img src="img/fuku_happy.png" alt=""><div><b>フク先生のお見合い道場</b><span>3分でできる、お見合いの会話体験ゲーム（無料）</span></div></a>
+        <a class="tool rv d1" href="https://hudetaro.github.io/fuku-shindan/" target="_blank" rel="noopener"><img src="img/fuku_normal.png" alt=""><div><b>30秒 結婚タイプ診断</b><span>あなたに合う婚活の進め方がわかる（無料）</span></div></a>
+      </div>
+    </div>
+  </section>
+
   <!-- 料金 -->
-  <section id="price" class="bg2">
+  <section id="price">
     <div class="wrap">
       <div class="sec-head rv"><span class="en">Price</span><h2>料金プラン</h2><p>くわしい内容は、無料面談でご説明します。</p></div>
       <div class="price rv">
@@ -276,7 +325,7 @@ footer nav a{color:#D9CCBB;margin:0 12px;text-decoration:none}
   </section>
 
   <!-- 流れ -->
-  <section id="flow">
+  <section id="flow" class="bg2">
     <div class="wrap">
       <div class="sec-head rv"><span class="en">Flow</span><h2>ご入会までの流れ</h2><p>まずはLINEから、気軽にご相談ください。</p></div>
       <ol class="flow rv">
@@ -290,7 +339,7 @@ footer nav a{color:#D9CCBB;margin:0 12px;text-decoration:none}
   </section>
 
   <!-- FAQ -->
-  <section id="faq" class="bg2">
+  <section id="faq">
     <div class="wrap">
       <div class="sec-head rv"><span class="en">Q&amp;A</span><h2>よくある質問</h2></div>
       <div class="faq rv">
