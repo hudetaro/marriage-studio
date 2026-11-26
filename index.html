@@ -7,7 +7,12 @@
 <meta name="description" content="結婚相談所マリッジクリエイトNeoは、婚活を「いっしょにつくる冒険」に変えるIBJ加盟の結婚相談所です。マリッジクリエイターが、プロフィール作りからお見合い・交際・成婚まで、全国オンラインで伴走します。">
 <meta property="og:title" content="結婚相談所 マリッジクリエイトNeo">
 <meta property="og:description" content="あなたの結婚を、いっしょにつくる。IBJ加盟・全国オンライン対応の結婚相談所です。">
-<meta property="og:image" content="img/rpg/hero.jpg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hudetaro.github.io/marriage-studio/">
+<meta property="og:site_name" content="結婚相談所 マリッジクリエイトNeo">
+<meta property="og:image" content="https://hudetaro.github.io/marriage-studio/img/rpg/hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="img/rpg/fuku_sage.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=DotGothic16&family=Shippori+Mincho:wght@600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
@@ -405,7 +410,7 @@ footer nav{margin:22px 0}
         </div>
         <div class="rv d1">
           <h3><b>▶ note</b>婚活コラム（新着）</h3>
-          <div class="notes">
+          <div class="notes" id="notes">
             <a class="win light ncard" href="https://note.com/kekkon_fuku/n/n30c4bc3fb62e" target="_blank" rel="noopener"><img src="https://assets.st-note.com/production/uploads/images/335449647/rectangle_large_type_2_22cd4d6edeadff3ef0fb60fed53a0ace.png?width=400" alt=""><div><b>結婚相談所に入ったことは親や友人に話すべき？話すメリット3つと、話すときの注意点</b><small>2026.11.26</small></div></a>
             <a class="win light ncard" href="https://note.com/kekkon_fuku/n/n3ae7968601af" target="_blank" rel="noopener"><img src="https://assets.st-note.com/production/uploads/images/335449445/rectangle_large_type_2_e1a8f89693b2e25351fbfacbb763a24d.png?width=400" alt=""><div><b>仮交際のデートで会話が盛り上がらないのはなぜ？原因3つと、話題を広げるコツ4つ</b><small>2026.11.25</small></div></a>
             <a class="win light ncard" href="https://note.com/kekkon_fuku/n/naecdef6d37e3" target="_blank" rel="noopener"><img src="https://assets.st-note.com/production/uploads/images/335449199/rectangle_large_type_2_42712dcc2999ddefc40a138d469ff52c.png?width=400" alt=""><div><b>婚活LINEで仕事の愚痴やネガティブな話はしていい？印象が下がる書き方3つと、やわらかい言いかえ例</b><small>2026.11.25</small></div></a>
@@ -514,7 +519,7 @@ footer nav{margin:22px 0}
   <div class="flogo"><small>MARRIAGE CREATE NEO</small><b>マリッジクリエイトNeo</b></div>
   <nav>
     <a href="#legal">特定商取引法に基づく表記</a>
-    <a href="#">プライバシーポリシー</a>
+    <a href="privacy.html">プライバシーポリシー</a>
     <a href="https://www.youtube.com/channel/UClz9nCXALjZfVts4ga1Dc_Q" target="_blank" rel="noopener">YouTube</a>
     <a href="https://note.com/kekkon_fuku" target="_blank" rel="noopener">note</a>
   </nav>
@@ -545,6 +550,11 @@ if(csT){const sl=[...csT.children];const cur=()=>{let b=0,m=1e9;sl.forEach((e,j)
 const go=d=>{const i=Math.max(0,Math.min(sl.length-1,cur()+d));csT.scrollTo({left:sl[i].offsetLeft-sl[0].offsetLeft,behavior:'smooth'})};
 document.querySelectorAll('.cs-btn').forEach(b=>b.onclick=()=>go(+b.dataset.d));
 csT.addEventListener('scroll',()=>{const i=cur();csD.forEach((e,j)=>e.classList.toggle('on',i===j))},{passive:true});}
+
+/* noteの新着（notes.json は毎日自動で更新） */
+fetch('notes.json',{cache:'no-cache'}).then(r=>r.ok?r.json():null).then(a=>{if(!a||!a.length)return;
+const esc=t=>t.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+document.getElementById('notes').innerHTML=a.map(n=>`<a class="win light ncard" href="${esc(n.url)}" target="_blank" rel="noopener"><img src="${esc(n.thumb)}" alt=""><div><b>${esc(n.title)}</b><small>${esc(n.date)}</small></div></a>`).join('')}).catch(()=>{});
 </script>
 </body>
 </html>
